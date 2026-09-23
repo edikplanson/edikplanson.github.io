@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeading from "../PageHeading.astro";
+import Experience from "../Experience.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<Layout pageTitle={t("nav.experience")}>
+  <PageHeading title={t("nav.experience")} subtitle={t("experience.subtitle")} />
+  <Experience />
+</Layout>

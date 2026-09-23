@@ -1,40 +1,38 @@
 ---
-import { siteConfig } from "../config";
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+import { siteConfig, getContent } from "../config";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = getContent(lang);
+const hasEducation = c.education && c.education.length > 0;
 ---
 
 {
   hasEducation && (
-    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
+    <section id="education" class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
       <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Education
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8">
+        <div class="max-w-6xl">
+          <div>
             <div class="space-y-8">
-              {siteConfig.education.map((edu) => (
-                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
+              {c.education.map((edu, index) => {
+                const color =
+                  siteConfig.palette[index % siteConfig.palette.length];
+                return (
+                <div
+                  class="gutter bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-4 sm:p-5 md:p-6 pl-6 sm:pl-7 md:pl-8 hover:shadow-md transition-shadow duration-300"
+                  style={`--gutter-color: ${color}`}
+                >
                   <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                     <div>
-                      <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+                      <h3 class="text-lg sm:text-xl font-semibold text-[var(--vs-fg)]">
                         {edu.degree}
                       </h3>
-                      <p
-                        class="text-base sm:text-lg"
-                        style={`color: ${siteConfig.accentColor}`}
-                      >
+                      <p class="text-base sm:text-lg" style={`color: ${color}`}>
                         {edu.school}
                       </p>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
+                    <span class="text-xs sm:text-sm text-[var(--vs-fg-muted)] mt-2 sm:mt-0 shrink-0 whitespace-nowrap">
                       {edu.dateRange}
                     </span>
                   </div>
@@ -50,7 +48,8 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                     ))}
                   </ul>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

@@ -1,0 +1,32 @@
+---
+import { siteConfig } from "../config";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** Syntax colour for the rule under the title. Defaults to the accent. */
+  color?: string;
+}
+
+const { title, subtitle, color = siteConfig.accentColor } = Astro.props;
+---
+
+<div class="px-8 sm:px-12 md:px-16 lg:px-24 pt-28 sm:pt-32 md:pt-36">
+  <h1
+    class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-[var(--vs-fg)]"
+  >
+    {title}
+  </h1>
+  <div
+    class="w-[75px] h-[4px] mt-3 rounded-full"
+    style={`background-color: ${color}`}
+  >
+  </div>
+  {
+    subtitle && (
+      <p class="tok-comment mt-6 max-w-3xl text-base sm:text-lg md:text-xl italic">
+        {subtitle}
+      </p>
+    )
+  }
+</div>

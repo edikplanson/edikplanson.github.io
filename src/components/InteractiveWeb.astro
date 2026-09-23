@@ -1,0 +1,210 @@
+---
+import { siteConfig } from "../config";
+
+/** Node colours, handed to the script as a data attribute. */
+const colors = siteConfig.palette.join(",");
+---
+
+<canvas
+  id="web-canvas"
+  data-colors={colors}
+  aria-hidden="true"
+  class="fixed inset-0 w-full h-full pointer-events-none"
+  style="z-index: 0"></canvas>
+
+<script>
+  const canvas = document.getElementById("web-canvas") as HTMLCanvasElement | null;
+  const ctx = canvas?.getContext("2d");
+
+  if (canvas && ctx) {
+    const colors = (canvas.dataset.colors ?? "#4ec9b0").split(",");
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    /** Distance at which two nodes are still linked. */
+    const LINK_DIST = 132;
+    /** Distance at which the cursor links to a node and nudges it. */
+    const MOUSE_DIST = 210;
+    /** How hard a frame of scrolling shoves the web. */
+    const SCROLL_PUSH = 0.0125;
+    /** Per-frame decay of that shove — lower is snappier. */
+    const SCROLL_DAMPING = 0.9;
+    /** Ceiling on scroll speed, so a fling cannot launch the web away. */
+    const SCROLL_CLAMP = 150;
+
+    type Node = {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      /** Velocity contributed by scrolling; decays back to zero. */
+      sy: number;
+      /** Parallax factor — near nodes get thrown further than far ones. */
+      depth: number;
+      r: number;
+      color: string;
+    };
+
+    let width = 0;
+    let height = 0;
+    let nodes: Node[] = [];
+    let frame = 0;
+    let lastScrollY = window.scrollY;
+    let scrollVel = 0;
+    const mouse = { x: -9999, y: -9999, active: false };
+
+    const rgba = (hex: string, alpha: number) => {
+      const n = parseInt(hex.slice(1), 16);
+      return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
+    };
+
+    function seed() {
+      // Density scales with viewport area, capped so phones stay smooth.
+      const count = Math.min(90, Math.max(28, Math.round((width * height) / 19000)));
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        sy: 0,
+        depth: 0.5 + Math.random(),
+        r: Math.random() * 1.4 + 0.9,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      }));
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const nextW = window.innerWidth;
+      const nextH = window.innerHeight;
+      // Mobile browsers fire resize as the URL bar hides; only a real
+      // change in width (or a large one in height) justifies re-seeding.
+      const reseed =
+        nodes.length === 0 ||
+        nextW !== width ||
+        Math.abs(nextH - height) > 140;
+
+      width = nextW;
+      height = nextH;
+      canvas!.width = Math.floor(width * dpr);
+      canvas!.height = Math.floor(height * dpr);
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (reseed) seed();
+    }
+
+    function draw() {
+      ctx!.clearRect(0, 0, width, height);
+
+      // Sample scrolling here rather than in the listener: one reading per
+      // rendered frame, so the push tracks real speed instead of event count.
+      if (!reduceMotion) {
+        const y = window.scrollY;
+        const delta = y - lastScrollY;
+        lastScrollY = y;
+        scrollVel = Math.max(-SCROLL_CLAMP, Math.min(SCROLL_CLAMP, delta));
+      }
+
+      for (const node of nodes) {
+        if (!reduceMotion) {
+          // Scrolling down drags the web upward a beat behind the content.
+          node.sy -= scrollVel * SCROLL_PUSH * node.depth;
+          node.sy *= SCROLL_DAMPING;
+
+          node.x += node.vx;
+          node.y += node.vy + node.sy;
+
+          // Gentle repulsion so the web parts around the cursor.
+          if (mouse.active) {
+            const dx = node.x - mouse.x;
+            const dy = node.y - mouse.y;
+            const d = Math.hypot(dx, dy);
+            if (d < MOUSE_DIST && d > 0.01) {
+              const push = (1 - d / MOUSE_DIST) * 0.55;
+              node.x += (dx / d) * push;
+              node.y += (dy / d) * push;
+            }
+          }
+
+          // Wrap around the edges.
+          if (node.x < -20) node.x = width + 20;
+          if (node.x > width + 20) node.x = -20;
+          if (node.y < -20) node.y = height + 20;
+          if (node.y > height + 20) node.y = -20;
+        }
+
+        ctx!.fillStyle = rgba(node.color, 0.55);
+        ctx!.fillRect(node.x - node.r, node.y - node.r, node.r * 2, node.r * 2);
+      }
+
+      // Node-to-node links.
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 > LINK_DIST * LINK_DIST) continue;
+          const alpha = (1 - Math.sqrt(d2) / LINK_DIST) * 0.22;
+          ctx!.strokeStyle = rgba(a.color, alpha);
+          ctx!.lineWidth = 1;
+          ctx!.beginPath();
+          ctx!.moveTo(a.x, a.y);
+          ctx!.lineTo(b.x, b.y);
+          ctx!.stroke();
+        }
+      }
+
+      // Cursor links — brighter, so the web visibly follows the mouse.
+      if (mouse.active) {
+        for (const node of nodes) {
+          const dx = node.x - mouse.x;
+          const dy = node.y - mouse.y;
+          const d = Math.hypot(dx, dy);
+          if (d > MOUSE_DIST) continue;
+          const alpha = (1 - d / MOUSE_DIST) * 0.75;
+          ctx!.strokeStyle = rgba(node.color, alpha);
+          ctx!.lineWidth = 1.1;
+          ctx!.beginPath();
+          ctx!.moveTo(node.x, node.y);
+          ctx!.lineTo(mouse.x, mouse.y);
+          ctx!.stroke();
+
+          ctx!.fillStyle = rgba(node.color, alpha);
+          ctx!.fillRect(node.x - 1.6, node.y - 1.6, 3.2, 3.2);
+        }
+      }
+
+      frame = requestAnimationFrame(draw);
+    }
+
+    const onPointer = (e: PointerEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    };
+
+    // A finger has no hover state: once it lifts, the cursor links must go,
+    // otherwise the web stays bound to the last tap forever.
+    const releaseTouch = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") mouse.active = false;
+    };
+
+    window.addEventListener("pointermove", onPointer, { passive: true });
+    window.addEventListener("pointerdown", onPointer, { passive: true });
+    window.addEventListener("pointerup", releaseTouch, { passive: true });
+    window.addEventListener("pointercancel", releaseTouch, { passive: true });
+    window.addEventListener("pointerleave", () => (mouse.active = false));
+    window.addEventListener("resize", resize);
+
+    // Stop the loop when the tab is hidden.
+    document.addEventListener("visibilitychange", () => {
+      cancelAnimationFrame(frame);
+      if (!document.hidden) frame = requestAnimationFrame(draw);
+    });
+
+    resize();
+    frame = requestAnimationFrame(draw);
+  }
+</script>

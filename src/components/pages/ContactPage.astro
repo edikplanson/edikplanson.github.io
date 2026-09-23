@@ -1,0 +1,80 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeading from "../PageHeading.astro";
+import { siteConfig, getContent } from "../../config";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = getContent(lang);
+const { contact } = siteConfig;
+
+const entries = [
+  {
+    label: t("contact.emailPerso"),
+    value: contact.emailPerso,
+    href: `mailto:${contact.emailPerso}`,
+  },
+  {
+    label: t("contact.emailEcole"),
+    value: contact.emailEcole,
+    href: `mailto:${contact.emailEcole}`,
+  },
+  {
+    label: t("contact.phone"),
+    value: contact.phone,
+    href: `tel:${contact.phone.replace(/\s/g, "")}`,
+  },
+  { label: t("contact.address"), value: c.address, href: null },
+];
+---
+
+<Layout pageTitle={t("nav.contact")}>
+  <PageHeading title={t("nav.contact")} subtitle={t("contact.subtitle")} />
+
+  <section class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
+    <div class="max-w-3xl grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {
+        entries.map((entry, i) => (
+          <div
+            class="gutter bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-5 md:p-6 pl-6 md:pl-7"
+            style={`--gutter-color: ${siteConfig.palette[i % siteConfig.palette.length]}`}
+          >
+            <p class="text-sm text-[var(--vs-fg-muted)] mb-2">{entry.label}</p>
+            {entry.href ? (
+              <a
+                href={entry.href}
+                class="text-base sm:text-lg font-medium break-words transition-opacity hover:opacity-70"
+                style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}`}
+              >
+                {entry.value}
+              </a>
+            ) : (
+              <p class="text-base sm:text-lg font-medium text-gray-700">
+                {entry.value}
+              </p>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="max-w-3xl mt-12">
+      <h2 class="text-xl font-bold text-[var(--vs-fg)] mb-4">
+        {t("contact.interests")}
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        {
+          c.interests.map((interest, i) => (
+            <span
+              class="px-4 py-2 rounded border bg-[var(--vs-bg-inset)] text-sm sm:text-base"
+              style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}; border-color: var(--vs-border)`}
+            >
+              {interest}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

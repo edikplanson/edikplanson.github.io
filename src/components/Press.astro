@@ -1,0 +1,109 @@
+---
+import { siteConfig, getContent } from "../config";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = getContent(lang);
+const items = c.press ?? [];
+---
+
+<section id="press" class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
+  <div class="max-w-6xl">
+    {
+      items.length === 0 ? (
+        <p class="tok-comment italic text-base sm:text-lg">
+          {t("press.empty")}
+        </p>
+      ) : (
+        <div class="space-y-8">
+          {items.map((item, index) => {
+            const color =
+              siteConfig.palette[index % siteConfig.palette.length];
+            const Tag = item.link ? "a" : "div";
+            const linkProps = item.link
+              ? {
+                  href: item.link,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
+              : {};
+
+            return (
+              <Tag
+                {...linkProps}
+                class={`gutter group block bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-4 sm:p-5 md:p-6 pl-6 sm:pl-7 md:pl-8 transition-all duration-300 ${
+                  item.link
+                    ? "hover:border-[var(--vs-border-strong)] hover:-translate-y-1 hover:shadow-md"
+                    : ""
+                }`}
+                style={`--gutter-color: ${color}`}
+              >
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
+                  <div class="flex items-center gap-3 min-w-0">
+                    {item.logo && (
+                      <img
+                        src={item.logo}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        width="40"
+                        height="40"
+                        class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-md bg-white object-contain p-0.5 ring-1 ring-[var(--vs-border)]"
+                      />
+                    )}
+                    <p
+                      class="text-base sm:text-lg font-semibold"
+                      style={`color: ${color}`}
+                    >
+                      {item.outlet}
+                    </p>
+                  </div>
+                  <span class="text-xs sm:text-sm text-[var(--vs-fg-muted)] shrink-0">
+                    {item.format ? `${item.format} · ` : ""}
+                    {item.date}
+                  </span>
+                </div>
+
+                <h3 class="mt-2 text-lg sm:text-xl font-semibold text-[var(--vs-fg)]">
+                  {item.title}
+                </h3>
+
+                {item.excerpt && (
+                  <p
+                    class="mt-3 pl-3 border-l text-sm sm:text-base italic text-[var(--vs-fg-body)]"
+                    style={`border-color: ${color}`}
+                  >
+                    {item.excerpt}
+                  </p>
+                )}
+
+                {item.link && (
+                  <span
+                    class="mt-4 inline-flex items-center gap-1.5 text-sm"
+                    style={`color: ${color}`}
+                  >
+                    {t("press.read")}
+                    <svg
+                      class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </span>
+                )}
+              </Tag>
+            );
+          })}
+        </div>
+      )
+    }
+  </div>
+</section>

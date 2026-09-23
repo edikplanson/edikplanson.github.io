@@ -1,0 +1,63 @@
+---
+import Header from "../components/Header.astro";
+import InteractiveWeb from "../components/InteractiveWeb.astro";
+import Footer from "../components/Footer.astro";
+import Lightbox from "../components/Lightbox.astro";
+import { siteConfig, getContent, type Lang } from "../config";
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, getRouteFromUrl, localizePath } from "../i18n/utils";
+import "../styles/global.css";
+
+interface Props {
+  pageTitle?: string;
+  description?: string;
+}
+
+const { pageTitle, description } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url);
+const c = getContent(lang);
+
+const title = pageTitle
+  ? `${pageTitle} — ${siteConfig.name}`
+  : `${siteConfig.name} - ${c.title}`;
+
+const alternates = (Object.keys(languages) as Lang[]).map((code) => ({
+  code,
+  href: localizePath(route, code),
+}));
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description ?? c.description} />
+    {
+      alternates.map((alt) => (
+        <link rel="alternate" hreflang={alt.code} href={alt.href} />
+      ))
+    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <InteractiveWeb />
+    <Header />
+    <main class="flex-1 relative z-10">
+      <slot />
+    </main>
+    <div class="relative z-10">
+      <Footer />
+    </div>
+    <Lightbox />
+  </body>
+</html>

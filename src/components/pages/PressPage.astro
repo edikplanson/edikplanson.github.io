@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeading from "../PageHeading.astro";
+import Press from "../Press.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<Layout pageTitle={t("nav.press")}>
+  <PageHeading title={t("nav.press")} subtitle={t("press.subtitle")} />
+  <Press />
+</Layout>

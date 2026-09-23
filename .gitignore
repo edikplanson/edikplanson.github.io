@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Full-resolution media, kept locally only — public/media/ holds the web versions.
+media-originals/

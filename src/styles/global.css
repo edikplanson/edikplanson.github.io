@@ -1,5 +1,131 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   Theme: VSCode "Dark+" editor.
+   Near-black canvas, soft gray text. The syntax colours are accents
+   only — they mark structure, they never fill large areas.
+   --------------------------------------------------------------- */
+
+:root {
+  /* Editor surfaces */
+  --vs-bg: #1e1e1e; /* editor canvas */
+  --vs-bg-subtle: #181818; /* chrome: tabs, footer */
+  --vs-bg-inset: #252526; /* raised panels: cards */
+  --vs-border: #2d2d2d;
+  --vs-border-strong: #3c3c3c;
+
+  /* Text */
+  --vs-fg: #e6e6e6;
+  --vs-fg-body: #bdbdbd;
+  --vs-fg-muted: #858585;
+
+  /* Syntax tokens — the accent set (Dark+) */
+  --vs-comment: #6a9955;
+  --vs-keyword: #569cd6;
+  --vs-control: #c586c0;
+  --vs-string: #ce9178;
+  --vs-function: #dcdcaa;
+  --vs-type: #4ec9b0;
+  --vs-variable: #9cdcfe;
+  --vs-number: #b5cea8;
+  --vs-constant: #4fc1ff;
+
+  --accent: var(--vs-type);
+}
+
+/* Remap Tailwind's neutral scale onto the dark editor surfaces. */
+@theme {
+  --color-white: #252526;
+  --color-black: #e6e6e6;
+
+  --color-gray-50: #252526;
+  --color-gray-100: #2d2d2d;
+  --color-gray-200: #2d2d2d;
+  --color-gray-300: #3c3c3c;
+  --color-gray-400: #6e6e6e;
+  --color-gray-500: #858585;
+  --color-gray-600: #bdbdbd;
+  --color-gray-700: #d4d4d4;
+  --color-gray-800: #e0e0e0;
+  --color-gray-900: #e6e6e6;
+
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+html {
+  background-color: var(--vs-bg);
+}
+
 body {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
+  background-color: transparent; /* the web canvas shows through */
+  color: var(--vs-fg-body);
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+::selection {
+  background-color: #264f78; /* VSCode dark selection */
+  color: #ffffff;
+}
+
+.shadow-sm,
+.shadow-md,
+.shadow-xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Editor furniture ------------------------------------------ */
+
+.tok-comment {
+  color: var(--vs-comment);
+}
+.tok-comment::before {
+  content: "// ";
+}
+
+/* Left gutter rule, like a code-fold margin. */
+.gutter {
+  position: relative;
+}
+.gutter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--gutter-color, var(--accent));
+  opacity: 0.8;
+}
+
+/* Blinking block cursor. */
+.cursor::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: -0.12em;
+  background-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor::after {
+    animation: none;
+  }
 }

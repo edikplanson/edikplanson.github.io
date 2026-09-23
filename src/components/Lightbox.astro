@@ -1,0 +1,162 @@
+---
+/**
+ * One full-screen viewer per page, shared by every <Gallery />.
+ * Opens on any [data-lightbox-item] click; arrows / Esc / swipe to navigate.
+ */
+---
+
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Media viewer"
+>
+  <button
+    type="button"
+    data-lb-close
+    class="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--vs-border-strong)] bg-[var(--vs-bg-inset)] text-[var(--vs-fg)] transition-colors hover:bg-[var(--vs-bg)]"
+    aria-label="Close"
+  >
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M18 6L6 18M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <button
+    type="button"
+    data-lb-prev
+    class="absolute left-2 sm:left-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--vs-border-strong)] bg-[var(--vs-bg-inset)] text-[var(--vs-fg)] transition-colors hover:bg-[var(--vs-bg)]"
+    aria-label="Previous"
+  >
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 6l-6 6l6 6"></path>
+    </svg>
+  </button>
+
+  <button
+    type="button"
+    data-lb-next
+    class="absolute right-2 sm:right-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--vs-border-strong)] bg-[var(--vs-bg-inset)] text-[var(--vs-fg)] transition-colors hover:bg-[var(--vs-bg)]"
+    aria-label="Next"
+  >
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 6l6 6l-6 6"></path>
+    </svg>
+  </button>
+
+  <figure class="flex max-h-full max-w-5xl flex-col items-center gap-3">
+    <div data-lb-stage class="flex max-h-[80vh] items-center justify-center"></div>
+    <figcaption
+      data-lb-caption
+      class="text-center text-sm text-[var(--vs-fg-muted)]"
+    >
+    </figcaption>
+  </figure>
+</div>
+
+<script>
+  const box = document.getElementById("lightbox");
+  if (box) {
+    const stage = box.querySelector("[data-lb-stage]") as HTMLElement;
+    const caption = box.querySelector("[data-lb-caption]") as HTMLElement;
+
+    /** Thumbnails of the gallery currently being browsed. */
+    let group: HTMLElement[] = [];
+    let index = 0;
+
+    const render = () => {
+      const el = group[index];
+      if (!el) return;
+      const src = el.dataset.src ?? "";
+      const kind = el.dataset.kind ?? "image";
+      const text = el.dataset.caption ?? "";
+
+      stage.innerHTML = "";
+      const media =
+        kind === "video"
+          ? Object.assign(document.createElement("video"), {
+              src,
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: true,
+            })
+          : Object.assign(document.createElement("img"), { src, alt: text });
+      if (media instanceof HTMLVideoElement) media.playsInline = true;
+      media.className = "max-h-[80vh] max-w-full rounded-lg object-contain";
+      stage.appendChild(media);
+
+      caption.textContent =
+        group.length > 1 ? `${text} — ${index + 1} / ${group.length}` : text;
+    };
+
+    const open = (el: HTMLElement) => {
+      const gallery = el.closest("[data-gallery]");
+      group = gallery
+        ? Array.from(gallery.querySelectorAll<HTMLElement>("[data-lightbox-item]"))
+        : [el];
+      index = Math.max(0, group.indexOf(el));
+      box.classList.remove("hidden");
+      box.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      render();
+    };
+
+    const close = () => {
+      box.classList.add("hidden");
+      box.classList.remove("flex");
+      document.body.style.overflow = "";
+      stage.innerHTML = "";
+    };
+
+    const step = (delta: number) => {
+      if (group.length < 2) return;
+      index = (index + delta + group.length) % group.length;
+      render();
+    };
+
+    document.addEventListener("click", (event) => {
+      const thumb = (event.target as HTMLElement).closest<HTMLElement>(
+        "[data-lightbox-item]"
+      );
+      if (thumb) {
+        event.preventDefault();
+        open(thumb);
+      }
+    });
+
+    box.querySelector("[data-lb-close]")?.addEventListener("click", close);
+    box.querySelector("[data-lb-prev]")?.addEventListener("click", () => step(-1));
+    box.querySelector("[data-lb-next]")?.addEventListener("click", () => step(1));
+    // Click on the backdrop, not on the media itself.
+    box.addEventListener("click", (event) => {
+      if (event.target === box) close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (box.classList.contains("hidden")) return;
+      if (event.key === "Escape") close();
+      if (event.key === "ArrowLeft") step(-1);
+      if (event.key === "ArrowRight") step(1);
+    });
+
+    // Swipe on touch screens.
+    let startX = 0;
+    box.addEventListener(
+      "touchstart",
+      (event) => {
+        startX = event.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    box.addEventListener(
+      "touchend",
+      (event) => {
+        const dx = event.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+      },
+      { passive: true }
+    );
+  }
+</script>

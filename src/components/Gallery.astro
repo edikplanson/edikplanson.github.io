@@ -1,0 +1,92 @@
+---
+/**
+ * Thumbnail strip for one media folder under `public/media/`.
+ * Renders nothing when the folder is missing or empty, so a project
+ * without pictures looks exactly like before.
+ *
+ *   <Gallery folder="projects/smart-car" label={project.name} />
+ *
+ * Clicking a thumbnail opens the single <Lightbox /> living in the layout.
+ */
+import { getMedia } from "../lib/media";
+
+interface Props {
+  folder: string;
+  /** Used for alt text when a file has no caption. */
+  label?: string;
+  accent?: string;
+}
+
+const { folder, label = "", accent = "var(--vs-border-strong)" } = Astro.props;
+const items = getMedia(folder);
+---
+
+{
+  items.length > 0 && (
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
+      data-gallery={folder}
+    >
+      {items.map((item, i) => (
+        <button
+          type="button"
+          class="group/thumb relative block aspect-video overflow-hidden rounded-md border bg-[var(--vs-bg)] cursor-zoom-in transition-all duration-300 hover:border-[var(--thumb-accent)]"
+          style={`border-color: var(--vs-border); --thumb-accent: ${accent}`}
+          data-lightbox-item
+          data-src={item.src}
+          data-kind={item.kind}
+          data-caption={item.caption || label}
+          data-index={i}
+          aria-label={`${item.caption || label} — open`}
+        >
+          {item.kind === "video" ? (
+            <video
+              src={item.src}
+              class="h-full w-full object-cover transition-transform duration-500 group-hover/thumb:scale-105"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              aria-label={item.caption || label}
+            />
+          ) : (
+            <img
+              src={item.src}
+              alt={item.caption || label}
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover/thumb:scale-105"
+            />
+          )}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+<script>
+  // Thumbnails loop like GIFs, but only while they are on screen —
+  // a dozen videos playing at once for nothing is wasted battery.
+  const videos = document.querySelectorAll<HTMLVideoElement>(
+    "[data-gallery] video"
+  );
+
+  if (videos.length > 0 && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) video.play().catch(() => {});
+          else video.pause();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    for (const video of videos) {
+      video.pause();
+      observer.observe(video);
+    }
+  }
+</script>

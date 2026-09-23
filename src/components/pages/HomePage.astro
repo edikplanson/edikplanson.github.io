@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../Hero.astro";
+import About from "../About.astro";
+import { siteConfig, getContent } from "../../config";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = getContent(lang);
+
+const cards = [
+  {
+    route: "/projects/",
+    label: t("nav.projects"),
+    text: `${c.projects.length} ${t("home.projects.text")}`,
+  },
+  { route: "/skills/", label: t("nav.skills"), text: t("home.skills.text") },
+  {
+    route: "/experience/",
+    label: t("nav.experience"),
+    text: t("home.experience.text"),
+  },
+  {
+    route: "/education/",
+    label: t("nav.education"),
+    text: t("home.education.text"),
+  },
+  // Drops out of the grid when the press array is emptied.
+  ...(c.press?.length
+    ? [
+        {
+          route: "/press/",
+          label: t("nav.press"),
+          text: t("home.press.text"),
+        },
+      ]
+    : []),
+];
+---
+
+<Layout>
+  <Hero />
+  <About />
+  <section class="px-8 sm:px-12 md:px-16 lg:px-24 pb-16 md:pb-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-5xl">
+      {
+        cards.map((card, i) => (
+          <a
+            href={localizePath(card.route, lang)}
+            class="gutter group block p-6 pl-7 bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg border border-[var(--vs-border)] transition-all duration-300 hover:bg-[var(--vs-bg)] hover:border-[var(--vs-border-strong)] hover:-translate-y-1"
+            style={`--gutter-color: ${siteConfig.palette[i % siteConfig.palette.length]}`}
+          >
+            <h3
+              class="text-xl font-bold"
+              style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}`}
+            >
+              {card.label}
+              <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                {" →"}
+              </span>
+            </h3>
+            <p class="mt-2 text-base text-[var(--vs-fg-body)]">{card.text}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

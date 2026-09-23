@@ -1,49 +1,42 @@
 ---
-import { siteConfig } from "../config";
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+import { siteConfig, getContent } from "../config";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Gallery from "./Gallery.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = getContent(lang);
+const hasProjects = c.projects && c.projects.length > 0;
 ---
 
 {
   hasProjects && (
-    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
+    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
       <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Projects
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8">
+        <div class="max-w-6xl">
+          <div>
             <div class="space-y-8">
-              {siteConfig.projects.map((project, index) => {
-                const Component = project.link ? "a" : "div";
-                const linkProps = project.link
-                  ? {
-                      href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    }
-                  : {};
+              {c.projects.map((project, index) => {
+                const accent =
+                  siteConfig.palette[index % siteConfig.palette.length];
 
                 return (
                   <div class="group relative">
-                    <Component
-                      {...linkProps}
-                      class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
-                          : ""
-                      }`}
+                    <div
+                      class="gutter block relative p-4 sm:p-6 md:p-8 pl-6 sm:pl-8 md:pl-10 bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg border border-[var(--vs-border)] transition-all duration-300"
+                      style={`--gutter-color: ${accent}`}
                     >
                       {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={project.name}
+                          class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full border bg-[var(--vs-bg)] transition-all duration-300 hover:bg-[var(--vs-bg-subtle)]"
+                          style={`color: ${accent}; border-color: var(--vs-border)`}
+                        >
                           <svg
-                            class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 hover:translate-x-0.5 hover:-translate-y-0.5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -55,18 +48,21 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                               d="M7 17L17 7M17 7H7M17 7V17"
                             />
                           </svg>
-                        </div>
+                        </a>
                       )}
 
                       <div class="space-y-4">
                         <div>
-                          <span
-                            class="text-sm font-mono"
-                            style={{ color: siteConfig.accentColor }}
-                          >
-                            0{index + 1}
+                          <span class="text-sm">
+                            <span style={`color: ${accent}`}>
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span class="text-[var(--vs-fg-muted)]">
+                              {project.dateRange ? ` · ${project.dateRange}` : ""}
+                              {project.type ? ` · ${project.type}` : ""}
+                            </span>
                           </span>
-                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                          <h3 class="text-xl sm:text-2xl font-bold text-[var(--vs-fg)] mt-1">
                             {project.name}
                           </h3>
                         </div>
@@ -77,13 +73,19 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           {project.description}
                         </p>
 
+                        {/* Pictures come straight from public/media/<project.media>. */}
+                        <Gallery
+                          folder={project.media ?? ""}
+                          label={project.name}
+                          accent={accent}
+                        />
+
                         {project.skills && project.skills.length > 0 && (
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
-                            {project.skills.map((skill) => (
+                            {project.skills.map((skill, si) => (
                               <span
-                                class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800" : ""
-                                }`}
+                                class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border bg-[var(--vs-bg)] text-xs sm:text-sm transition-all duration-300"
+                                style={`color: ${siteConfig.palette[(index + si) % siteConfig.palette.length]}; border-color: var(--vs-border)`}
                               >
                                 {skill}
                               </span>
@@ -91,7 +93,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           </div>
                         )}
                       </div>
-                    </Component>
+                    </div>
                   </div>
                 );
               })}

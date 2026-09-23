@@ -4,6 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://edikplanson.github.io",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "fr"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

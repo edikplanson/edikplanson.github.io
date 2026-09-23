@@ -1,0 +1,41 @@
+---
+import { siteConfig, type Lang } from "../config";
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, getRouteFromUrl, localizePath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url);
+const entries = (Object.keys(languages) as Lang[]).map((code) => ({
+  code,
+  ...languages[code],
+  href: localizePath(route, code),
+  current: code === lang,
+}));
+---
+
+<div class="flex items-center gap-1 text-xs sm:text-sm">
+  {
+    entries.map((entry, index) => (
+      <>
+        {index > 0 && <span class="text-gray-600">/</span>}
+        <a
+          href={entry.href}
+          hreflang={entry.code}
+          lang={entry.code}
+          aria-label={entry.label}
+          aria-current={entry.current ? "true" : undefined}
+          class={`px-2 py-2 rounded transition-colors ${
+            entry.current
+              ? "font-medium text-[var(--vs-fg)] bg-[var(--vs-bg)] border border-[var(--vs-border-strong)]"
+              : "text-[var(--vs-fg-muted)] border border-transparent hover:text-[var(--vs-fg)]"
+          }`}
+          style={entry.current
+            ? `color: ${siteConfig.accentColor}`
+            : undefined}
+        >
+          {entry.short}
+        </a>
+      </>
+    ))
+  }
+</div>
