@@ -252,6 +252,7 @@ export const content = {
       {
         company: "Keyestudio",
         title: "Brand collaboration",
+        logo: "/media/logos/keyestudio.webp",
         dateRange: "2024",
         bullets: [
           "Selected by the brand to showcase one of their robotics kits on TikTok in exchange for the product",
@@ -270,6 +271,7 @@ export const content = {
       {
         company: "LNCMI-CNRS — National Laboratory for Intense Magnetic Fields",
         title: "Observation internship",
+        logo: "/media/logos/lncmi-cnrs.webp",
         dateRange: "2019",
         bullets: [
           "Observed how researchers and engineers work together",
@@ -288,6 +290,7 @@ export const content = {
       {
         company: "Robotics Trophy — Cité de l'Espace",
         title: "Competitor",
+        logo: "/media/logos/planete-sciences-occitanie.webp",
         dateRange: "2014",
         bullets: [
           "Fourth place out of twelve competing clubs",
@@ -774,6 +777,7 @@ export const content = {
       {
         company: "Keyestudio",
         title: "Collaboration de marque",
+        logo: "/media/logos/keyestudio.webp",
         dateRange: "2024",
         bullets: [
           "Sélectionné par la marque pour présenter un de leurs kits robotiques sur TikTok en échange du produit",
@@ -793,6 +797,7 @@ export const content = {
         company:
           "LNCMI-CNRS — Laboratoire National des Champs Magnétiques Intenses",
         title: "Stage d'observation",
+        logo: "/media/logos/lncmi-cnrs.webp",
         dateRange: "2019",
         bullets: [
           "Observation de la collaboration entre chercheurs et ingénieurs",
@@ -811,6 +816,7 @@ export const content = {
       {
         company: "Trophée de Robotique — Cité de l'Espace",
         title: "Compétiteur",
+        logo: "/media/logos/planete-sciences-occitanie.webp",
         dateRange: "2014",
         bullets: [
           "Quatrième place sur douze clubs engagés",
