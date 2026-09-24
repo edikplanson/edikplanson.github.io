@@ -188,9 +188,64 @@ export const content = {
     ],
     experience: [
       {
+        company: "NUS — National University of Singapore",
+        title: "Research intern",
+        logo: "/media/logos/nus.webp",
+        dateRange: "May 2026 - July 2026",
+        bullets: [
+          "Project: design and integration of tactile sensors, and development of a teleoperation system to train Vision-Language-Action (VLA) models",
+          "A VTLA (Visual-Tactile-Language-Action) model is a large language model trained to combine task objectives, visual information and tactile feedback in order to generate efficient motor actions for a robot",
+        ],
+      },
+      {
+        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
+        title: "Physical AI Hackathon winner",
+        logo: "/media/logos/epfl.webp",
+        dateRange: "May 2026",
+        bullets: [
+          "Won 2nd place in the Hardware Track of the EPFL AI Team Hackathon (Physical AI)",
+          "Trained a small VLA model on a Hugging Face SO-101 robot to autonomously grasp a bottle and water plants",
+          "Monitored soil moisture, temperature and other environmental data with an ESP32",
+        ],
+      },
+      {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
         title: "Research intern",
+        logo: "/media/logos/laas-cnrs.webp",
+        dateRange: "March 2026 - May 2026",
+        bullets: [
+          "Project: design and implementation of tactile sensors on a robot for the deployment of a VTLA model",
+          "A VTLA (Visual-Tactile-Language-Action) model is a large language model trained to combine task objectives, visual information and tactile feedback in order to generate efficient motor actions for a robot",
+          "GEPETTO team, supervised by Vincent Bonnet",
+        ],
+      },
+      {
+        company: "Y Combinator — RoboHacks by Innate, San Francisco",
+        title: "Hackathon entertainer",
+        logo: "/media/logos/y-combinator.svg",
+        dateRange: "April 2026",
+        bullets: [
+          "Brought my fully custom-built WALL-E animatronic robot to Innate's 2026 Physical AI Hackathon, hosted at the Y Combinator office in San Francisco",
+          "Entertained and inspired sponsors and contestants while showcasing my work in robotics, hardware and animatronics",
+        ],
+      },
+      {
+        company: "IUT GEII, Toulouse",
+        title: "Tutor",
+        logo: "/media/logos/iut-toulouse.svg",
+        dateRange: "October 2024 - January 2026",
+        bullets: [
+          "Tutoring first-year and second-year students",
+          "Explaining lectures, tutorials (TD) and practical work (TP)",
+        ],
+      },
+
+      {
+        company:
+          "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
+        title: "Research intern",
+        logo: "/media/logos/laas-cnrs.webp",
         dateRange: "May 2025 - July 2025",
         bullets: [
           "Designed and integrated a first complete version of an instrumented insole",
@@ -245,7 +300,19 @@ export const content = {
     ],
     education: [
       {
+        school: "ENSEEIHT — Toulouse INP",
+        degree:
+          "Engineering degree (Diplôme d'ingénieur), Electrical Engineering and Automation (3EA)",
+        logo: "/media/logos/enseeiht.webp",
+        dateRange: "2026 - 2029",
+        achievements: [
+          "3EA track: electrical engineering, electronics, automation and embedded systems",
+        ],
+      },
+
+      {
         school: "IUT Paul Sabatier, Toulouse",
+        logo: "/media/logos/iut-toulouse.svg",
         degree:
           "BUT GEII (Electrical Engineering and Industrial Computing), Industrial Automation and Computing (AII) track",
         dateRange: "2023 - 2026",
@@ -646,9 +713,64 @@ export const content = {
     ],
     experience: [
       {
+        company: "NUS — National University of Singapore",
+        title: "Stage de recherche",
+        logo: "/media/logos/nus.webp",
+        dateRange: "Mai 2026 - Juillet 2026",
+        bullets: [
+          "Projet : conception et intégration de capteurs tactiles, et développement d'un système de téléopération pour l'entraînement de modèles Vision-Language-Action (VLA)",
+          "Un modèle VTLA (Visual-Tactile-Language-Action) est un grand modèle de langage entraîné à intégrer l'objectif de la tâche, les informations visuelles et le retour tactile afin de générer des actions motrices efficaces pour un robot",
+        ],
+      },
+      {
+        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
+        title: "Vainqueur du Physical AI Hackathon",
+        logo: "/media/logos/epfl.webp",
+        dateRange: "Mai 2026",
+        bullets: [
+          "2e place du Hardware Track de l'EPFL AI Team Hackathon (Physical AI)",
+          "Entraînement d'un petit modèle VLA sur un robot Hugging Face SO-101 pour saisir une bouteille et arroser des plantes de façon autonome",
+          "Suivi de l'humidité du sol, de la température et d'autres données environnementales avec un ESP32",
+        ],
+      },
+      {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
         title: "Stage de recherche",
+        logo: "/media/logos/laas-cnrs.webp",
+        dateRange: "Mars 2026 - Mai 2026",
+        bullets: [
+          "Projet : conception et implémentation de capteurs tactiles sur un robot pour le déploiement d'un modèle VTLA",
+          "Un modèle VTLA (Visual-Tactile-Language-Action) est un grand modèle de langage entraîné à intégrer l'objectif de la tâche, les informations visuelles et le retour tactile afin de générer des actions motrices efficaces pour un robot",
+          "Équipe GEPETTO, encadré par Vincent Bonnet",
+        ],
+      },
+      {
+        company: "Y Combinator — RoboHacks par Innate, San Francisco",
+        title: "Animateur de hackathon",
+        logo: "/media/logos/y-combinator.svg",
+        dateRange: "Avril 2026",
+        bullets: [
+          "Présentation de mon robot animatronique WALL-E entièrement fait maison au Physical AI Hackathon 2026 d'Innate, organisé dans les locaux de Y Combinator à San Francisco",
+          "Animation et inspiration des sponsors et des participants en mettant en avant mon travail en robotique, électronique et animatronique",
+        ],
+      },
+      {
+        company: "IUT GEII, Toulouse",
+        title: "Tuteur",
+        logo: "/media/logos/iut-toulouse.svg",
+        dateRange: "Octobre 2024 - Janvier 2026",
+        bullets: [
+          "Tutorat d'étudiants de première et de deuxième année",
+          "Explication des cours magistraux, des TD et des TP",
+        ],
+      },
+
+      {
+        company:
+          "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
+        title: "Stage de recherche",
+        logo: "/media/logos/laas-cnrs.webp",
         dateRange: "Mai 2025 - Juillet 2025",
         bullets: [
           "Concevoir et intégrer une première version finie d'une semelle instrumentée",
@@ -704,7 +826,19 @@ export const content = {
     ],
     education: [
       {
+        school: "ENSEEIHT — Toulouse INP",
+        degree:
+          "Diplôme d'ingénieur, filière Électronique, Énergie électrique et Automatique (3EA)",
+        logo: "/media/logos/enseeiht.webp",
+        dateRange: "2026 - 2029",
+        achievements: [
+          "Filière 3EA : génie électrique, électronique, automatique et systèmes embarqués",
+        ],
+      },
+
+      {
         school: "IUT Paul Sabatier, Toulouse",
+        logo: "/media/logos/iut-toulouse.svg",
         degree:
           "BUT GEII (Génie Électrique et Informatique Industrielle), parcours Automatisme et Informatique Industrielle (AII)",
         dateRange: "2023 - 2026",
