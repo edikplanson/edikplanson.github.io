@@ -187,17 +187,17 @@ export const content = {
     experience: [
       {
         company: "NUS — National University of Singapore",
-        title: "Research intern",
+        title: "Research engineering internship",
         logo: "/media/logos/nus.webp",
         dateRange: "May 2026 - July 2026",
         bullets: [
-          "Project: design and integration of tactile sensors, and development of a teleoperation system to train Vision-Language-Action (VLA) models",
+          "Project: design and integration of tactile sensors, and development of a teleoperation system to train Visual-Tactile-Language-Action (VTLA) models",
           "A VTLA (Visual-Tactile-Language-Action) model is a large language model trained to combine task objectives, visual information and tactile feedback in order to generate efficient motor actions for a robot",
         ],
       },
       {
         company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
-        title: "Physical AI Hackathon winner",
+        title: "Physical AI Hackathon prize winner",
         logo: "/media/logos/epfl.webp",
         dateRange: "May 2026",
         bullets: [
@@ -209,7 +209,7 @@ export const content = {
       {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
-        title: "Research intern",
+        title: "Research engineering internship",
         logo: "/media/logos/laas-cnrs.webp",
         dateRange: "March 2026 - May 2026",
         bullets: [
@@ -238,11 +238,10 @@ export const content = {
           "Explaining lectures, tutorials (TD) and practical work (TP)",
         ],
       },
-
       {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
-        title: "Research intern",
+        title: "Research engineering internship",
         logo: "/media/logos/laas-cnrs.webp",
         dateRange: "May 2025 - July 2025",
         bullets: [
@@ -270,7 +269,7 @@ export const content = {
       },
       {
         company: "LNCMI-CNRS — National Laboratory for Intense Magnetic Fields",
-        title: "Observation intern",
+        title: "Observation internship",
         dateRange: "2019",
         bullets: [
           "Observed how researchers and engineers work together",
@@ -300,7 +299,7 @@ export const content = {
       {
         school: "ENSEEIHT — Toulouse INP",
         degree:
-          "Engineering degree (Diplôme d'ingénieur), Electrical Engineering and Automation (3EA)",
+          "Engineering degree (Diplôme d'ingénieur), Electronics, Electrical Energy and Automation (3EA)",
         logo: "/media/logos/enseeiht.webp",
         dateRange: "2026 - 2029",
         achievements: [
@@ -315,8 +314,8 @@ export const content = {
           "BUT GEII (Electrical Engineering and Industrial Computing), Industrial Automation and Computing (AII) track",
         dateRange: "2023 - 2026",
         achievements: [
-          "Third year of the BUT GEII, AII track",
-          "Goal: joining an engineering school by application or entrance exam after the third year",
+          "Graduated from the BUT GEII, AII track",
+          "Admitted to ENSEEIHT — Toulouse INP by application after the third year",
         ],
       },
       {
@@ -710,17 +709,17 @@ export const content = {
     experience: [
       {
         company: "NUS — National University of Singapore",
-        title: "Stage de recherche",
+        title: "Stage ingénieur de recherche",
         logo: "/media/logos/nus.webp",
         dateRange: "Mai 2026 - Juillet 2026",
         bullets: [
-          "Projet : conception et intégration de capteurs tactiles, et développement d'un système de téléopération pour l'entraînement de modèles Vision-Language-Action (VLA)",
+          "Projet : conception et intégration de capteurs tactiles, et développement d'un système de téléopération pour l'entraînement de modèles Visual-Tactile-Language-Action (VTLA)",
           "Un modèle VTLA (Visual-Tactile-Language-Action) est un grand modèle de langage entraîné à intégrer l'objectif de la tâche, les informations visuelles et le retour tactile afin de générer des actions motrices efficaces pour un robot",
         ],
       },
       {
         company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
-        title: "Vainqueur du Physical AI Hackathon",
+        title: "Lauréat du Physical AI Hackathon",
         logo: "/media/logos/epfl.webp",
         dateRange: "Mai 2026",
         bullets: [
@@ -732,7 +731,7 @@ export const content = {
       {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
-        title: "Stage de recherche",
+        title: "Stage ingénieur de recherche",
         logo: "/media/logos/laas-cnrs.webp",
         dateRange: "Mars 2026 - Mai 2026",
         bullets: [
@@ -761,21 +760,20 @@ export const content = {
           "Explication des cours magistraux, des TD et des TP",
         ],
       },
-
       {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
-        title: "Stage de recherche",
+        title: "Stage ingénieur de recherche",
         logo: "/media/logos/laas-cnrs.webp",
         dateRange: "Mai 2025 - Juillet 2025",
         bullets: [
-          "Concevoir et intégrer une première version finie d'une semelle instrumentée",
-          "Mesurer les mouvements et les efforts du pied pour l'estimation de la cinématique du bas du corps",
+          "Conception et intégration d'une première version complète d'une semelle instrumentée",
+          "Mesure des mouvements et des efforts du pied pour l'estimation de la cinématique du bas du corps",
         ],
       },
       {
         company: "Keyestudio",
-        title: "Collaboration commerciale",
+        title: "Collaboration de marque",
         dateRange: "2024",
         bullets: [
           "Sélectionné par la marque pour présenter un de leurs kits robotiques sur TikTok en échange du produit",
@@ -787,14 +785,14 @@ export const content = {
         title: "Bénévole support informatique",
         dateRange: "2022 - 2024",
         bullets: [
-          "Résoudre des problèmes informatiques de l'association",
+          "Résolution des problèmes informatiques de l'association",
           "Diagnostic et réparation de dysfonctionnements d'ordinateurs et d'imprimantes",
         ],
       },
       {
         company:
           "LNCMI-CNRS — Laboratoire National des Champs Magnétiques Intenses",
-        title: "Stagiaire d'observation",
+        title: "Stage d'observation",
         dateRange: "2019",
         bullets: [
           "Observation de la collaboration entre chercheurs et ingénieurs",
@@ -839,8 +837,8 @@ export const content = {
           "BUT GEII (Génie Électrique et Informatique Industrielle), parcours Automatisme et Informatique Industrielle (AII)",
         dateRange: "2023 - 2026",
         achievements: [
-          "Troisième année du BUT GEII parcours AII",
-          "Objectif : intégration d'une école d'ingénieur sur dossier ou concours après la troisième année",
+          "Diplômé du BUT GEII, parcours AII",
+          "Intégration de l'ENSEEIHT — Toulouse INP sur dossier après la troisième année",
         ],
       },
       {
