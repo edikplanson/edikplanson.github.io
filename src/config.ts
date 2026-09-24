@@ -28,7 +28,7 @@ export const siteConfig = {
   ],
   contact: {
     emailPerso: "edikpcontact@gmail.com",
-    emailEcole: "edik.planson@etu.iut-tlse3.fr",
+    emailEcole: "edik.planson@etu.inp-n7.fr",
     phone: "06 02 16 18 87",
     website: "https://edikplanson.wixsite.com/edikplanson",
   },
@@ -39,7 +39,7 @@ export const content = {
     title: "Maker & electrical engineering student",
     description:
       "Portfolio of Edik Planson — engineering student at INP-ENSEEIHT in Toulouse, passionate about robotics and animatronics.",
-    address: "115 Route de Narbonne, Toulouse, France",
+    address: "2 Rue Charles Camichel, 31000 Toulouse, France",
     aboutMe:
       "Passionate about robotics since I was little and full of wild ideas, I spend my free time building complex and fun projects that grow my expertise in robotics. I'm a first year student at INP-ENSEEIHT in Toulouse. My goal: to work in robotics, and in particular film animatronics (Wētā Workshop is my dream), while keeping the door open to space, humanoid or medical robotics.",
     skills: [
@@ -562,7 +562,7 @@ export const content = {
     title: "Maker & étudiant en génie électrique",
     description:
       "Portfolio d'Edik Planson — étudiant ingénieur à l'INP-ENSEEIHT à Toulouse, passionné de robotique et d'animatronique.",
-    address: "115 Route de Narbonne, Toulouse",
+    address: "2 Rue Charles Camichel, 31000 Toulouse",
     aboutMe:
       "Passionné de robotique depuis tout petit et plein d'idées folles, j'occupe mon temps libre à développer des projets complexes et amusants qui construisent mon expertise en robotique. Je suis étudiant en première année à l'INP-ENSEEIHT à Toulouse. Mon objectif : travailler dans la robotique, et en particulier l'animatronique de cinéma (le Wētā Workshop me fait rêver), sans fermer la porte à la robotique spatiale, humanoïde ou médicale.",
     skills: [
