@@ -112,7 +112,7 @@ const socials = [
         class="mt-8 md:mt-10 flex flex-wrap gap-x-3 gap-y-2 text-xs sm:text-sm animate-fade-in animation-delay-600"
       >
         {
-          c.skills.slice(0, 6).map((skill, i) => (
+          c.skills.map((skill, i) => (
             <li
               class="px-2 py-1 rounded border bg-[var(--vs-bg-inset)]"
               style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}; border-color: var(--vs-border)`}
