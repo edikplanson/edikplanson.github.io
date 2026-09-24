@@ -38,10 +38,10 @@ export const content = {
   en: {
     title: "Maker & electrical engineering student",
     description:
-      "Portfolio of Edik Planson — BUT GEII student (Industrial Automation and Computing), passionate about robotics and animatronics.",
+      "Portfolio of Edik Planson — engineering student at INP-ENSEEIHT in Toulouse, passionate about robotics and animatronics.",
     address: "115 Route de Narbonne, Toulouse, France",
     aboutMe:
-      "Passionate about robotics since I was little and full of wild ideas, I spend my free time building complex and fun projects that grow my expertise in robotics. Today I am a BUT GEII student on the Industrial Automation and Computing (AII) track at IUT Paul Sabatier in Toulouse, and I plan to join an engineering school after my third year. My goal: to work in robotics, and in particular film animatronics (Wētā Workshop is my dream), while keeping the door open to space, humanoid or medical robotics.",
+      "Passionate about robotics since I was little and full of wild ideas, I spend my free time building complex and fun projects that grow my expertise in robotics. I'm a first year student at INP-ENSEEIHT in Toulouse. My goal: to work in robotics, and in particular film animatronics (Wētā Workshop is my dream), while keeping the door open to space, humanoid or medical robotics.",
     skills: [
       "C/C++",
       "Python",
@@ -561,10 +561,10 @@ export const content = {
   fr: {
     title: "Maker & étudiant en génie électrique",
     description:
-      "Portfolio d'Edik Planson — étudiant en BUT GEII (Automatisme et Informatique Industrielle), passionné de robotique et d'animatronique.",
+      "Portfolio d'Edik Planson — étudiant ingénieur à l'INP-ENSEEIHT à Toulouse, passionné de robotique et d'animatronique.",
     address: "115 Route de Narbonne, Toulouse",
     aboutMe:
-      "Passionné de robotique depuis tout petit et plein d'idées folles, j'occupe mon temps libre à développer des projets complexes et amusants qui construisent mon expertise en robotique. Aujourd'hui étudiant en BUT GEII parcours Automatisme et Informatique Industrielle à l'IUT Paul Sabatier de Toulouse, je souhaite intégrer une école d'ingénieur après ma troisième année. Mon objectif : travailler dans la robotique, et en particulier l'animatronique de cinéma (le Wētā Workshop me fait rêver), sans fermer la porte à la robotique spatiale, humanoïde ou médicale.",
+      "Passionné de robotique depuis tout petit et plein d'idées folles, j'occupe mon temps libre à développer des projets complexes et amusants qui construisent mon expertise en robotique. Je suis étudiant en première année à l'INP-ENSEEIHT à Toulouse. Mon objectif : travailler dans la robotique, et en particulier l'animatronique de cinéma (le Wētā Workshop me fait rêver), sans fermer la porte à la robotique spatiale, humanoïde ou médicale.",
     skills: [
       "C/C++",
       "Python",
