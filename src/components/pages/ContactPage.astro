@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeading from "../PageHeading.astro";
 import { siteConfig, getContent } from "../../config";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { cvPath, getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -27,6 +27,16 @@ const entries = [
   },
   { label: t("contact.address"), value: c.address, href: null },
 ];
+
+/* The CV of the page's own language first: it is the one most visitors want. */
+const cvs = (lang === "fr" ? (["fr", "en"] as const) : (["en", "fr"] as const)).map(
+  (code, i) => ({
+    code,
+    label: code === "fr" ? t("cv.french") : t("cv.english"),
+    href: cvPath(code),
+    color: siteConfig.palette[(entries.length + i) % siteConfig.palette.length],
+  }),
+);
 ---
 
 <Layout pageTitle={t("nav.contact")}>
@@ -57,6 +67,46 @@ const entries = [
           </div>
         ))
       }
+    </div>
+
+    <div class="max-w-3xl mt-12">
+      <h2 class="text-xl font-bold text-[var(--vs-fg)] mb-4">{t("cv.heading")}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {
+          cvs.map((cv) => (
+            <a
+              href={cv.href}
+              target="_blank"
+              rel="noopener"
+              hreflang={cv.code}
+              class="gutter group bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-5 md:p-6 pl-6 md:pl-7 transition-colors hover:border-[var(--vs-border-strong)]"
+              style={`--gutter-color: ${cv.color}`}
+            >
+              <p class="text-sm text-[var(--vs-fg-muted)] mb-2">{cv.label}</p>
+              <span
+                class="flex items-center gap-2 text-base sm:text-lg font-medium transition-opacity group-hover:opacity-70"
+                style={`color: ${cv.color}`}
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v12" />
+                  <path d="M8 11l4 4 4-4" />
+                  <path d="M5 19h14" />
+                </svg>
+                {t("cv.download")}
+              </span>
+            </a>
+          ))
+        }
+      </div>
     </div>
 
     <div class="max-w-3xl mt-12">

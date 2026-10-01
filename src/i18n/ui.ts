@@ -60,6 +60,13 @@ export const ui = {
     "contact.address": "Address",
     "contact.interests": "Interests",
 
+    "cv.label": "CV",
+    "cv.heading": "Résumé",
+    "cv.french": "French version",
+    "cv.english": "English version",
+    "cv.download": "Download the PDF",
+    "cv.openCurrent": "Open my CV (PDF)",
+
     "footer.rights": "All rights reserved.",
     "lang.switchLabel": "Language",
   },
@@ -103,6 +110,13 @@ export const ui = {
     "contact.phone": "Téléphone",
     "contact.address": "Adresse",
     "contact.interests": "Centres d'intérêt",
+
+    "cv.label": "CV",
+    "cv.heading": "CV",
+    "cv.french": "Version française",
+    "cv.english": "Version anglaise",
+    "cv.download": "Télécharger le PDF",
+    "cv.openCurrent": "Ouvrir mon CV (PDF)",
 
     "footer.rights": "Tous droits réservés.",
     "lang.switchLabel": "Langue",

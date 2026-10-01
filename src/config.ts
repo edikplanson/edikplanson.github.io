@@ -26,6 +26,11 @@ export const siteConfig = {
     "#9cdcfe", // variable
     "#4fc1ff", // constant
   ],
+  /** LaTeX CVs, exported to PDF and served from `public/cv/`. */
+  cv: {
+    en: "/cv/CV-Edik-Planson-EN.pdf",
+    fr: "/cv/CV-Edik-Planson-FR.pdf",
+  },
   contact: {
     emailPerso: "edikpcontact@gmail.com",
     emailEcole: "edik.planson@etu.inp-n7.fr",

@@ -1,4 +1,4 @@
-import { getContent, type Lang } from "../config";
+import { getContent, siteConfig, type Lang } from "../config";
 import { defaultLang, navItems, ui, type UIKey } from "./ui";
 
 const base = import.meta.env.BASE_URL.replace(/\/+$/, "");
@@ -29,6 +29,11 @@ export function localizePath(route: string, lang: Lang): string {
   const prefix = lang === defaultLang ? "" : `/${lang}`;
   const path = route === "/" ? `${prefix}/` : `${prefix}${route}`;
   return `${base}${path}`;
+}
+
+/** The CV for `lang`, as a href with the deploy base prepended. */
+export function cvPath(lang: Lang): string {
+  return `${base}${siteConfig.cv[lang]}`;
 }
 
 export function useTranslations(lang: Lang) {

@@ -2,6 +2,7 @@
 import { siteConfig } from "../config";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import {
+  cvPath,
   getLangFromUrl,
   getRouteFromUrl,
   localizePath,
@@ -12,6 +13,7 @@ import {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const currentRoute = getRouteFromUrl(Astro.url);
+const cvHref = cvPath(lang);
 
 /* Each tab carries its own syntax colour, like file-type icons in a sidebar. */
 const tabs = visibleNavItems(lang).map((item, i) => ({
@@ -51,7 +53,36 @@ const tabs = visibleNavItems(lang).map((item, i) => ({
         ))
       }
     </ul>
-    <div class="flex shrink-0 items-center px-2 sm:px-4 border-l border-[var(--vs-border)]">
+    <div
+      class="flex shrink-0 items-center gap-1 sm:gap-2 px-2 sm:px-4 border-l border-[var(--vs-border)]"
+    >
+      <a
+        href={cvHref}
+        target="_blank"
+        rel="noopener"
+        aria-label={t("cv.openCurrent")}
+        title={t("cv.openCurrent")}
+        class="flex items-center gap-1.5 px-2 py-2 rounded border border-[var(--vs-border-strong)] text-xs sm:text-sm text-[var(--vs-fg-muted)] transition-colors hover:text-[var(--vs-fg)] hover:bg-[var(--vs-bg)]"
+      >
+        <svg
+          aria-hidden="true"
+          class="w-3.5 h-3.5 shrink-0"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+          <path
+            d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"
+          />
+          <path d="M9 13h6" />
+          <path d="M9 17h3" />
+        </svg>
+        {t("cv.label")}
+      </a>
       <LanguageSwitcher />
     </div>
   </nav>
