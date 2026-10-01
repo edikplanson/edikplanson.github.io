@@ -64,7 +64,7 @@ export const ui = {
     "cv.heading": "CV",
     "cv.french": "French version",
     "cv.english": "English version",
-    "cv.download": "Download the PDF",
+    "cv.view": "See PDF",
     "cv.openCurrent": "Open my CV (PDF)",
 
     "footer.rights": "All rights reserved.",
@@ -115,7 +115,7 @@ export const ui = {
     "cv.heading": "CV",
     "cv.french": "Version française",
     "cv.english": "Version anglaise",
-    "cv.download": "Télécharger le PDF",
+    "cv.view": "Voir le PDF",
     "cv.openCurrent": "Ouvrir mon CV (PDF)",
 
     "footer.rights": "Tous droits réservés.",
