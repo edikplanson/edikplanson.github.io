@@ -55,9 +55,8 @@ const socials = [
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden pt-28 pb-24 md:h-screen md:pt-24 md:pb-0"
+  class="relative isolate overflow-hidden flex flex-col justify-center pt-28 pb-16 md:min-h-[60vh] md:pt-32 md:pb-20"
 >
-
   <!-- Editor grid -->
   <svg
     aria-hidden="true"
@@ -81,52 +80,50 @@ const socials = [
     <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"></rect>
   </svg>
 
-  <div class="h-full mx-auto px-8 sm:px-12 md:px-24 flex items-center">
-    <div class="w-full">
-      <p
-        class="tok-comment text-sm sm:text-base md:text-lg animate-fade-in"
-        style="font-style: italic"
-      >
-        {t("hero.greeting")}
-      </p>
+  <div class="w-full px-8 sm:px-12 md:px-16 lg:px-24">
+    <p
+      class="tok-comment text-sm sm:text-base md:text-lg animate-fade-in"
+      style="font-style: italic"
+    >
+      {t("hero.greeting")}
+    </p>
 
-      <h1
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-[var(--vs-fg)] animate-fade-in animation-delay-200"
+    <h1
+      class="mt-4 sm:mt-6 md:mt-8 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-[var(--vs-fg)] animate-fade-in animation-delay-200"
+    >
+      <span class="text-[var(--vs-fg-muted)] font-normal"
+        >{t("hero.intro")}</span
       >
-        <span class="text-[var(--vs-fg-muted)] font-normal"
-          >{t("hero.intro")}</span
-        >
-        <span class="cursor" style={`color: ${siteConfig.accentColor}`}
-          >{siteConfig.name}</span
-        >
-      </h1>
+      <span class="cursor" style={`color: ${siteConfig.accentColor}`}
+        >{siteConfig.name}</span
+      >
+    </h1>
 
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 text-[var(--vs-fg-body)] animate-fade-in animation-delay-400"
-      >
-        {c.title}
-      </p>
+    <p
+      class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 text-[var(--vs-fg-body)] animate-fade-in animation-delay-400"
+    >
+      {c.title}
+    </p>
 
-      <!-- Skill tokens, each in its own syntax colour -->
-      <ul
-        class="mt-8 md:mt-10 flex flex-wrap gap-x-3 gap-y-2 text-xs sm:text-sm animate-fade-in animation-delay-600"
-      >
-        {
-          c.skills.map((skill, i) => (
-            <li
-              class="px-2 py-1 rounded border bg-[var(--vs-bg-inset)]"
-              style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}; border-color: var(--vs-border)`}
-            >
-              {skill}
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <!-- Skill tokens, each in its own syntax colour -->
+    <ul
+      class="mt-8 md:mt-10 flex flex-wrap gap-x-3 gap-y-2 text-xs sm:text-sm animate-fade-in animation-delay-600"
+    >
+      {
+        c.skills.map((skill, i) => (
+          <li
+            class="px-2 py-1 rounded border bg-[var(--vs-bg-inset)]"
+            style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}; border-color: var(--vs-border)`}
+          >
+            {skill}
+          </li>
+        ))
+      }
+    </ul>
   </div>
 
   <div
-    class="mt-12 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 px-8 sm:px-12 md:p-24 flex gap-x-5 sm:gap-x-6 animate-fade-in animation-delay-600"
+    class="mt-10 md:mt-12 px-8 sm:px-12 md:px-16 lg:px-24 flex gap-x-5 sm:gap-x-6 animate-fade-in animation-delay-600"
   >
     {
       socials.map((s) => (

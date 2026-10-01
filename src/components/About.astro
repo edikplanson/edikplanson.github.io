@@ -11,64 +11,50 @@ const c = getContent(lang);
 const portrait = getCover("about");
 ---
 
-<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
-  <div>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-      <div class="lg:col-span-4">
-        <h2
-          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-[var(--vs-fg)]"
-        >
-          {t("about.heading")}
-        </h2>
-        <div
-          class="w-[75px] h-[4px] mt-3 rounded-full"
-          style={`background-color: ${siteConfig.accentColor}`}
-        >
-        </div>
-
-        {
-          portrait && (
-            <button
-              type="button"
-              class="group/portrait mt-8 block w-full max-w-xs overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
-              data-lightbox-item
-              data-src={portrait.src}
-              data-kind={portrait.kind}
-              data-caption={siteConfig.name}
-              aria-label={siteConfig.name}
-            >
-              <img
-                src={portrait.src}
-                alt={siteConfig.name}
-                loading="lazy"
-                decoding="async"
-                class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover/portrait:scale-105"
-              />
-            </button>
-          )
-        }
+<section
+  id="about"
+  class="px-8 sm:px-12 md:px-16 lg:px-24 py-12 sm:py-16 md:py-20"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+    <div class="lg:col-span-4">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-[var(--vs-fg)]"
+      >
+        {t("about.heading")}
+      </h2>
+      <div
+        class="w-[75px] h-[4px] mt-3 rounded-full"
+        style={`background-color: ${siteConfig.accentColor}`}
+      >
       </div>
 
-      <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
-          {c.aboutMe}
-        </p>
+      {
+        portrait && (
+          <button
+            type="button"
+            class="group/portrait mt-8 block w-full max-w-xs overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
+            data-lightbox-item
+            data-src={portrait.src}
+            data-kind={portrait.kind}
+            data-caption={siteConfig.name}
+            aria-label={siteConfig.name}
+          >
+            <img
+              src={portrait.src}
+              alt={siteConfig.name}
+              loading="lazy"
+              decoding="async"
+              class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover/portrait:scale-105"
+            />
+          </button>
+        )
+      }
+    </div>
 
-        <div class="pt-4">
-          <div class="flex flex-wrap gap-3">
-            {
-              c.skills.map((skill, i) => (
-                <span
-                  class="px-3 sm:px-4 py-1.5 sm:py-2 rounded border bg-[var(--vs-bg-inset)] text-sm sm:text-base md:text-lg transition-colors duration-200 hover:bg-[var(--vs-bg-subtle)]"
-                  style={`color: ${siteConfig.palette[i % siteConfig.palette.length]}; border-color: var(--vs-border)`}
-                >
-                  {skill}
-                </span>
-              ))
-            }
-          </div>
-        </div>
-      </div>
+    <div class="lg:col-span-8">
+      <p class="max-w-3xl text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
+        {c.aboutMe}
+      </p>
     </div>
   </div>
 </section>
