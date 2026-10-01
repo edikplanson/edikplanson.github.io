@@ -61,7 +61,7 @@ export const ui = {
     "contact.interests": "Interests",
 
     "cv.label": "CV",
-    "cv.heading": "Résumé",
+    "cv.heading": "CV",
     "cv.french": "French version",
     "cv.english": "English version",
     "cv.download": "Download the PDF",
