@@ -56,7 +56,7 @@ export const content = {
       "3D Printing",
       "Robotics",
     ],
-    interests: ["Robotics", "Tinkering", "Stones and crystals", "Cinema"],
+    interests: ["Robotics", "Tinkering", "Collecting minerals", "Cinema"],
     projects: [
       {
         name: "Wall-E Animatronic",
@@ -583,7 +583,7 @@ export const content = {
       "Impression 3D",
       "Robotique",
     ],
-    interests: ["Robotique", "Bricolage", "Pierres et cristaux", "Cinéma"],
+    interests: ["Robotique", "Bricolage", "Collection de minéraux", "Cinéma"],
     projects: [
       {
         name: "Animatronique Wall-E",
