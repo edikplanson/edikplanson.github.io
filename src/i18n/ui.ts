@@ -55,7 +55,7 @@ export const ui = {
     "press.subtitle":
       "Articles, interviews and media coverage about my projects.",
     "press.empty": "No coverage listed yet.",
-    "press.read": "Read the article",
+    "press.read": "See the article",
     "contact.subtitle":
       "A question, an internship opportunity, or simply the urge to talk robotics? Write to me.",
 
@@ -110,7 +110,7 @@ export const ui = {
     "press.subtitle":
       "Articles, interviews et retombées presse à propos de mes projets.",
     "press.empty": "Aucune retombée presse pour le moment.",
-    "press.read": "Lire l'article",
+    "press.read": "Voir l'article",
     "contact.subtitle":
       "Une question, une opportunité de stage ou simplement l'envie d'échanger sur la robotique ? Écrivez-moi.",
 
