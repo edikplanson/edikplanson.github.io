@@ -201,17 +201,6 @@ export const content = {
         ],
       },
       {
-        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
-        title: "Physical AI Hackathon prize winner",
-        logo: "/media/logos/epfl.webp",
-        dateRange: "May 2026",
-        bullets: [
-          "Won 2nd place in the Hardware Track of the EPFL AI Team Hackathon (Physical AI)",
-          "Trained a small VLA model on a Hugging Face SO-101 robot to autonomously grasp a bottle and water plants",
-          "Monitored soil moisture, temperature and other environmental data with an ESP32",
-        ],
-      },
-      {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
         title: "Research engineering internship",
@@ -290,6 +279,19 @@ export const content = {
         bullets: [
           "Discovered programmable electronics with Arduino",
           "Learned 3D printing and 3D modelling with TinkerCad",
+        ],
+      },
+    ],
+    achievements: [
+      {
+        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
+        title: "Physical AI Hackathon prize winner",
+        logo: "/media/logos/epfl.webp",
+        dateRange: "May 2026",
+        bullets: [
+          "Won 2nd place in the Hardware Track of the EPFL AI Team Hackathon (Physical AI)",
+          "Trained a small VLA model on a Hugging Face SO-101 robot to autonomously grasp a bottle and water plants",
+          "Monitored soil moisture, temperature and other environmental data with an ESP32",
         ],
       },
       {
@@ -726,17 +728,6 @@ export const content = {
         ],
       },
       {
-        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
-        title: "Lauréat du Physical AI Hackathon",
-        logo: "/media/logos/epfl.webp",
-        dateRange: "Mai 2026",
-        bullets: [
-          "2e place du Hardware Track de l'EPFL AI Team Hackathon (Physical AI)",
-          "Entraînement d'un petit modèle VLA sur un robot Hugging Face SO-101 pour saisir une bouteille et arroser des plantes de façon autonome",
-          "Suivi de l'humidité du sol, de la température et d'autres données environnementales avec un ESP32",
-        ],
-      },
-      {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
         title: "Stage ingénieur de recherche",
@@ -816,6 +807,19 @@ export const content = {
         bullets: [
           "Découverte de l'électronique programmable avec Arduino",
           "Apprentissage de l'impression 3D et de la modélisation 3D sur TinkerCad",
+        ],
+      },
+    ],
+    achievements: [
+      {
+        company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
+        title: "Lauréat du Physical AI Hackathon",
+        logo: "/media/logos/epfl.webp",
+        dateRange: "Mai 2026",
+        bullets: [
+          "2e place du Hardware Track de l'EPFL AI Team Hackathon (Physical AI)",
+          "Entraînement d'un petit modèle VLA sur un robot Hugging Face SO-101 pour saisir une bouteille et arroser des plantes de façon autonome",
+          "Suivi de l'humidité du sol, de la température et d'autres données environnementales avec un ESP32",
         ],
       },
       {

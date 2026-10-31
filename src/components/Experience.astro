@@ -5,17 +5,25 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const c = getContent(lang);
-const hasExperience = c.experience && c.experience.length > 0;
+
+interface Props {
+  /** Timeline entries to render; defaults to the experience list. */
+  items?: typeof c.experience;
+  id?: string;
+}
+
+const { items = c.experience, id = "experience" } = Astro.props;
+const hasExperience = items && items.length > 0;
 ---
 
 {
   hasExperience && (
-    <section id="experience" class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
+    <section id={id} class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
       <div>
         <div class="max-w-6xl">
           <div>
             <div class="relative">
-              {c.experience.map((exp, index) => {
+              {items.map((exp, index) => {
                 const color =
                   siteConfig.palette[index % siteConfig.palette.length];
                 const logo = "logo" in exp ? (exp.logo as string) : undefined;
@@ -28,7 +36,7 @@ const hasExperience = c.experience && c.experience.length > 0;
                   />
 
                   {/* Connecting line below card */}
-                  {index < c.experience.length - 1 && (
+                  {index < items.length - 1 && (
                     <div class="absolute left-1/2 bottom-0 w-0.5 h-12 bg-[var(--vs-border-strong)] -translate-x-1/2 translate-y-full z-10" />
                   )}
 

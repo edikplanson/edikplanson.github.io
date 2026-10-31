@@ -13,6 +13,7 @@ export const navItems = [
   { route: "/projects/", key: "nav.projects" },
   { route: "/skills/", key: "nav.skills" },
   { route: "/experience/", key: "nav.experience" },
+  { route: "/achievements/", key: "nav.achievements", requires: "achievements" },
   { route: "/education/", key: "nav.education" },
   { route: "/press/", key: "nav.press", requires: "press" },
   { route: "/contact/", key: "nav.contact" },
@@ -24,6 +25,7 @@ export const ui = {
     "nav.projects": "Projects",
     "nav.skills": "Skills",
     "nav.experience": "Experience",
+    "nav.achievements": "Achievements",
     "nav.education": "Education",
     "nav.press": "Press",
     "nav.contact": "Contact",
@@ -36,6 +38,7 @@ export const ui = {
     "home.projects.text": "personal and university projects",
     "home.skills.text": "Technical, software and transferable",
     "home.experience.text": "Internships, collaborations and volunteering",
+    "home.achievements.text": "Awards and competitions",
     "home.education.text": "BUT GEII, BIA and Baccalauréat",
     "home.press.text": "Media coverage and interviews",
 
@@ -45,6 +48,8 @@ export const ui = {
       "The technical, software and transferable skills developed through my projects and experiences.",
     "experience.subtitle":
       "The professional and volunteer experiences that consolidated and broadened my abilities.",
+    "achievements.subtitle":
+      "Awards, rankings and competitions I took part in.",
     "education.subtitle":
       "My academic path, from the Baccalauréat to the BUT GEII on the Industrial Automation and Computing track.",
     "press.subtitle":
@@ -75,6 +80,7 @@ export const ui = {
     "nav.projects": "Projets",
     "nav.skills": "Compétences",
     "nav.experience": "Expérience",
+    "nav.achievements": "Réalisations",
     "nav.education": "Formation",
     "nav.press": "Presse",
     "nav.contact": "Contact",
@@ -87,6 +93,7 @@ export const ui = {
     "home.projects.text": "projets personnels et universitaires",
     "home.skills.text": "Techniques, logicielles et transversales",
     "home.experience.text": "Stages, collaborations et bénévolat",
+    "home.achievements.text": "Prix et compétitions",
     "home.education.text": "BUT GEII, BIA et baccalauréat",
     "home.press.text": "Retombées presse et interviews",
 
@@ -96,6 +103,8 @@ export const ui = {
       "Les compétences techniques, logicielles et transversales développées au fil de mes projets et de mes expériences.",
     "experience.subtitle":
       "Les expériences professionnelles et associatives qui ont consolidé et diversifié mes capacités.",
+    "achievements.subtitle":
+      "Les prix, classements et compétitions auxquels j'ai participé.",
     "education.subtitle":
       "Mon parcours scolaire, du baccalauréat au BUT GEII parcours Automatisme et Informatique Industrielle.",
     "press.subtitle":
