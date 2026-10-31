@@ -15,46 +15,43 @@ const portrait = getCover("about");
   id="about"
   class="px-8 sm:px-12 md:px-16 lg:px-24 py-8 md:py-10"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4">
-      <h2
-        class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-[var(--vs-fg)]"
-      >
-        {t("about.heading")}
-      </h2>
-      <div
-        class="w-[75px] h-[4px] mt-3 rounded-full"
-        style={`background-color: ${siteConfig.accentColor}`}
-      >
-      </div>
+  <h2
+    class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-[var(--vs-fg)]"
+  >
+    {t("about.heading")}
+  </h2>
+  <div
+    class="w-[75px] h-[4px] mt-3 rounded-full"
+    style={`background-color: ${siteConfig.accentColor}`}
+  >
+  </div>
 
-      {
-        portrait && (
-          <button
-            type="button"
-            class="group/portrait mt-8 block w-full max-w-xs overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
-            data-lightbox-item
-            data-src={portrait.src}
-            data-kind={portrait.kind}
-            data-caption={siteConfig.name}
-            aria-label={siteConfig.name}
-          >
-            <img
-              src={portrait.src}
-              alt={siteConfig.name}
-              loading="lazy"
-              decoding="async"
-              class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover/portrait:scale-105"
-            />
-          </button>
-        )
-      }
-    </div>
+  <!-- Photo and text side by side, text centred on the photo once there is room -->
+  <div class="mt-8 flex flex-col md:flex-row md:items-start lg:items-center gap-8 lg:gap-12">
+    {
+      portrait && (
+        <button
+          type="button"
+          class="group/portrait block w-full max-w-xs md:w-64 lg:w-72 shrink-0 overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
+          data-lightbox-item
+          data-src={portrait.src}
+          data-kind={portrait.kind}
+          data-caption={siteConfig.name}
+          aria-label={siteConfig.name}
+        >
+          <img
+            src={portrait.src}
+            alt={siteConfig.name}
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover/portrait:scale-105"
+          />
+        </button>
+      )
+    }
 
-    <div class="lg:col-span-8">
-      <p class="max-w-3xl text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
-        {c.aboutMe}
-      </p>
-    </div>
+    <p class="flex-1 min-w-0 text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-600">
+      {c.aboutMe}
+    </p>
   </div>
 </section>
