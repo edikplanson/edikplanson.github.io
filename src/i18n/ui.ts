@@ -45,7 +45,7 @@ export const ui = {
     "projects.subtitle":
       "The personal and university projects that built my skills, from a robotic hand to a life-size Wall-E animatronic.",
     "skills.subtitle":
-      "The technical, software and transferable skills developed through my projects and experiences.",
+      "The skills built through my projects and experiences, with the hardware robotics ones first.",
     "experience.subtitle":
       "The professional and volunteer experiences that consolidated and broadened my abilities.",
     "education.subtitle":
@@ -101,7 +101,7 @@ export const ui = {
     "projects.subtitle":
       "Les projets personnels et universitaires qui ont construit mes compétences, de la main robotique au Wall-E animatronique à taille réelle.",
     "skills.subtitle":
-      "Les compétences techniques, logicielles et transversales développées au fil de mes projets et de mes expériences.",
+      "Les compétences acquises au fil de mes projets et expériences, celles utiles en robotique hardware en premier.",
     "experience.subtitle":
       "Les expériences professionnelles et associatives qui ont consolidé et diversifié mes capacités.",
     "education.subtitle":

@@ -397,6 +397,63 @@ export const content = {
           "Edik Planson, 19, a second-year Electrical Engineering and Industrial Computing (BUT GEII) student at Toulouse University, spent over a year and a half designing his own Wall-E robot, entirely handcrafted.",
       },
     ],
+    /**
+     * The short list the Skills page shows, ordered for a hardware robotics
+     * internship. `skillCategories` below keeps the full detailed list.
+     */
+    featuredSkills: [
+      {
+        name: "Electronics & PCB",
+        items: [
+          "Circuit design and component sizing",
+          "PCB design in Proteus, from schematic to Gerber",
+          "Through-hole and SMD soldering",
+          "Bill of materials and board costing",
+        ],
+      },
+      {
+        name: "Test & debugging",
+        items: [
+          "Oscilloscope and multimeter measurements",
+          "Fault-finding on electronic systems",
+          "Circuit simulation in Proteus",
+          "Test benches and test sets",
+        ],
+      },
+      {
+        name: "Embedded programming",
+        items: [
+          "C++ on Arduino microcontrollers",
+          "UART, SPI and I2C links",
+          "Python for data processing and tooling",
+          "Unit tests and documented code",
+        ],
+      },
+      {
+        name: "Mechanical design",
+        items: [
+          "3D modelling in OnShape, Fusion 360 and TinkerCad",
+          "3D printing",
+          "Working from engineering drawings",
+        ],
+      },
+      {
+        name: "Robotics & automation",
+        items: [
+          "Robot modelling and sensors in CoppeliaSim",
+          "Geometric model validation in Python",
+          "Siemens and Schneider PLCs (TIA Portal, Control Expert, Vijeo Designer)",
+        ],
+      },
+      {
+        name: "Soft skills",
+        items: [
+          "Teamwork and project leadership",
+          "Technical English, datasheets included",
+          "Determination and attention to detail",
+        ],
+      },
+    ],
     skillCategories: [
       {
         title: "Technical skills",
@@ -914,6 +971,59 @@ export const content = {
         date: "8 avril 2025",
         format: "Publication",
         link: "https://www.instagram.com/p/DIL9ZbBtE2S/",
+      },
+    ],
+    featuredSkills: [
+      {
+        name: "Électronique & PCB",
+        items: [
+          "Conception de circuits et dimensionnement de composants",
+          "Conception de PCB sur Proteus, du schéma au Gerber",
+          "Soudure traversante et CMS",
+          "Nomenclature et chiffrage d'une carte",
+        ],
+      },
+      {
+        name: "Test & débogage",
+        items: [
+          "Mesures à l'oscilloscope et au multimètre",
+          "Recherche de pannes sur un système électronique",
+          "Simulation de circuits sur Proteus",
+          "Bancs et jeux de tests",
+        ],
+      },
+      {
+        name: "Programmation embarquée",
+        items: [
+          "C++ sur microcontrôleurs Arduino",
+          "Liaisons UART, SPI et I2C",
+          "Python pour le traitement de données et l'outillage",
+          "Tests unitaires et code documenté",
+        ],
+      },
+      {
+        name: "Conception mécanique",
+        items: [
+          "Modélisation 3D sur OnShape, Fusion 360 et TinkerCad",
+          "Impression 3D",
+          "Travail à partir de dessins techniques",
+        ],
+      },
+      {
+        name: "Robotique & automatisme",
+        items: [
+          "Modélisation de robots et de capteurs sur CoppeliaSim",
+          "Validation d'un modèle géométrique en Python",
+          "Automates Siemens et Schneider (TIA Portal, Control Expert, Vijeo Designer)",
+        ],
+      },
+      {
+        name: "Savoir-être",
+        items: [
+          "Travail en équipe et pilotage de projet",
+          "Anglais technique, datasheets comprises",
+          "Détermination et souci du détail",
+        ],
       },
     ],
     skillCategories: [
