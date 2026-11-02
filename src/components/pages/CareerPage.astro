@@ -17,12 +17,14 @@ const cvs = (lang === "fr" ? (["fr", "en"] as const) : (["en", "fr"] as const)).
   }),
 );
 
-/* LinkedIn leads, and drops out while `social.linkedin` is empty. */
+/* LinkedIn leads on its own row, so the two CVs sit side by side below it;
+   it drops out while `social.linkedin` is empty. */
 const links = [
   ...(siteConfig.social.linkedin
     ? [
         {
           code: undefined,
+          wide: true,
           label: t("career.linkedin"),
           href: siteConfig.social.linkedin,
           action: t("career.linkedinView"),
@@ -48,7 +50,10 @@ const links = [
             target="_blank"
             rel="noopener"
             hreflang={link.code}
-            class="gutter group bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-5 md:p-6 pl-6 md:pl-7 transition-colors hover:border-[var(--vs-border-strong)]"
+            class:list={[
+              "gutter group bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg shadow-sm border border-[var(--vs-border)] p-5 md:p-6 pl-6 md:pl-7 transition-colors hover:border-[var(--vs-border-strong)]",
+              "wide" in link && "sm:col-span-2",
+            ]}
             style={`--gutter-color: ${link.color}`}
           >
             <p class="text-sm text-[var(--vs-fg-muted)] mb-2">{link.label}</p>
