@@ -195,7 +195,8 @@ export const content = {
     ],
     experience: [
       {
-        company: "Hackathon IA for Impact — La Mêlée, Toulouse",
+        company: "Hackathon IA for Impact — La Mêlée",
+        location: "At ENSEEIHT, Toulouse",
         title: "Grand Prix winner",
         dateRange: "October 2026",
         bullets: [
@@ -788,7 +789,8 @@ export const content = {
     ],
     experience: [
       {
-        company: "Hackathon IA for Impact — La Mêlée, Toulouse",
+        company: "Hackathon IA for Impact — La Mêlée",
+        location: "À l'ENSEEIHT, Toulouse",
         title: "Lauréat du Grand Prix",
         dateRange: "Octobre 2026",
         bullets: [

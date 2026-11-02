@@ -19,6 +19,8 @@ const hasExperience = c.experience && c.experience.length > 0;
                 const color =
                   siteConfig.palette[index % siteConfig.palette.length];
                 const logo = "logo" in exp ? (exp.logo as string) : undefined;
+                const location =
+                  "location" in exp ? (exp.location as string) : undefined;
                 return (
                 <div class="relative mb-12 last:mb-0">
                   {/* Timeline dot at top of card */}
@@ -58,6 +60,11 @@ const hasExperience = c.experience && c.experience.length > 0;
                           <p class="text-base sm:text-lg" style={`color: ${color}`}>
                             {exp.company}
                           </p>
+                          {location && (
+                            <p class="text-sm sm:text-base text-[var(--vs-fg-muted)]">
+                              {location}
+                            </p>
+                          )}
                         </div>
                       </div>
                       <span class="text-xs sm:text-sm text-[var(--vs-fg-muted)] mt-2 sm:mt-0 shrink-0 whitespace-nowrap">
