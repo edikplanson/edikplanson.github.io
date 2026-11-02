@@ -21,10 +21,10 @@ const hasExperience = c.experience && c.experience.length > 0;
                 const logo = "logo" in exp ? (exp.logo as string) : undefined;
                 const location =
                   "location" in exp ? (exp.location as string) : undefined;
-                const photo =
-                  "photo" in exp
-                    ? (exp.photo as { src: string; caption: string })
-                    : undefined;
+                const photos =
+                  "photos" in exp
+                    ? (exp.photos as { src: string; caption: string }[])
+                    : [];
                 return (
                 <div class="relative mb-12 last:mb-0">
                   {/* Timeline dot at top of card */}
@@ -87,24 +87,34 @@ const hasExperience = c.experience && c.experience.length > 0;
                       ))}
                     </ul>
 
-                    {photo && (
-                      <button
-                        type="button"
-                        class="group/photo mt-5 block w-full overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
-                        data-lightbox-item
-                        data-src={photo.src}
-                        data-kind="image"
-                        data-caption={photo.caption}
-                        aria-label={photo.caption}
+                    {photos.length > 0 && (
+                      <div
+                        class:list={[
+                          "mt-5 grid gap-3",
+                          photos.length > 1 && "grid-cols-2",
+                        ]}
+                        data-gallery
                       >
-                        <img
-                          src={photo.src}
-                          alt={photo.caption}
-                          loading="lazy"
-                          decoding="async"
-                          class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover/photo:scale-105"
-                        />
-                      </button>
+                        {photos.map((photo) => (
+                          <button
+                            type="button"
+                            class="group/photo block w-full overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
+                            data-lightbox-item
+                            data-src={photo.src}
+                            data-kind="image"
+                            data-caption={photo.caption}
+                            aria-label={photo.caption}
+                          >
+                            <img
+                              src={photo.src}
+                              alt={photo.caption}
+                              loading="lazy"
+                              decoding="async"
+                              class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover/photo:scale-105"
+                            />
+                          </button>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </div>

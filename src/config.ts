@@ -199,10 +199,7 @@ export const content = {
         location: "At ENSEEIHT, Toulouse",
         title: "Grand Prix winner",
         logo: "/media/logos/hackathon-ia-for-impact.webp",
-        photo: {
-          src: "/media/experience/hackathon-ia-for-impact-winners.webp",
-          caption: "The BâtIA team with the Grand Prix",
-        },
+        photos: [{ src: "/media/experience/hackathon-ia-for-impact-winners.webp", caption: "The BâtIA team with the Grand Prix" }],
         dateRange: "October 2026",
         bullets: [
           "Won the Action Logement / In'li Sud Ouest challenge, then the Grand Prix of the final, among about 100 participants over 30 non-stop hours at ENSEEIHT",
@@ -268,6 +265,9 @@ export const content = {
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
         title: "Research engineering internship",
         logo: "/media/logos/laas-cnrs.webp",
+        photos: [
+          { src: "/media/experience/laas-cnrs-instrumented-insole.webp", caption: "The instrumented insole" },
+        ],
         dateRange: "May 2025 - July 2025",
         bullets: [
           "Designed and integrated a first complete version of an instrumented insole",
@@ -278,6 +278,9 @@ export const content = {
         company: "Keyestudio",
         title: "Brand collaboration",
         logo: "/media/logos/keyestudio.webp",
+        photos: [
+          { src: "/media/experience/keyestudio-robot-kit.webp", caption: "The Keyestudio robot kit" },
+        ],
         dateRange: "2024",
         bullets: [
           "Selected by the brand to showcase one of their robotics kits on TikTok in exchange for the product",
@@ -286,7 +289,11 @@ export const content = {
       },
       {
         company: "Launaguet Sport Loisir Culture (LSLC)",
+        logo: "/media/logos/lslc.webp",
         title: "Volunteer IT support",
+        photos: [
+          { src: "/media/experience/lslc-it-support.webp", caption: "IT support at LSLC" },
+        ],
         dateRange: "2022 - 2024",
         bullets: [
           "Solved the association's IT problems",
@@ -297,6 +304,10 @@ export const content = {
         company: "LNCMI-CNRS — National Laboratory for Intense Magnetic Fields",
         title: "Observation internship",
         logo: "/media/logos/lncmi-cnrs.webp",
+        photos: [
+          { src: "/media/experience/lncmi-cnrs-building.webp", caption: "The LNCMI-CNRS building" },
+          { src: "/media/experience/lncmi-cnrs-magnet.webp", caption: "An intense-field magnet at the LNCMI" },
+        ],
         dateRange: "2019",
         bullets: [
           "Observed how researchers and engineers work together",
@@ -306,6 +317,9 @@ export const content = {
       {
         company: "FabLab",
         title: "Learning programmable electronics",
+        photos: [
+          { src: "/media/experience/fablab.webp", caption: "At the FabLab" },
+        ],
         dateRange: "2016 - 2018",
         bullets: [
           "Discovered programmable electronics with Arduino",
@@ -316,6 +330,10 @@ export const content = {
         company: "Robotics Trophy — Cité de l'Espace",
         title: "Competitor",
         logo: "/media/logos/planete-sciences-occitanie.webp",
+        photos: [
+          { src: "/media/experience/robotics-trophy-1.webp", caption: "The robot on the competition table" },
+          { src: "/media/experience/robotics-trophy-2.webp", caption: "With the robot at the Cité de l'Espace" },
+        ],
         dateRange: "2014",
         bullets: [
           "Fourth place out of twelve competing clubs",
@@ -798,10 +816,7 @@ export const content = {
         location: "À l'ENSEEIHT, Toulouse",
         title: "Lauréat du Grand Prix",
         logo: "/media/logos/hackathon-ia-for-impact.webp",
-        photo: {
-          src: "/media/experience/hackathon-ia-for-impact-winners.webp",
-          caption: "L'équipe BâtIA avec le Grand Prix",
-        },
+        photos: [{ src: "/media/experience/hackathon-ia-for-impact-winners.webp", caption: "L'équipe BâtIA avec le Grand Prix" }],
         dateRange: "Octobre 2026",
         bullets: [
           "Victoire sur le défi Action Logement / In'li Sud Ouest, puis Grand Prix de la finale, parmi une centaine de participants pendant 30 heures non-stop à l'ENSEEIHT",
@@ -867,6 +882,9 @@ export const content = {
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
         title: "Stage ingénieur de recherche",
         logo: "/media/logos/laas-cnrs.webp",
+        photos: [
+          { src: "/media/experience/laas-cnrs-instrumented-insole.webp", caption: "La semelle instrumentée" },
+        ],
         dateRange: "Mai 2025 - Juillet 2025",
         bullets: [
           "Conception et intégration d'une première version complète d'une semelle instrumentée",
@@ -877,6 +895,9 @@ export const content = {
         company: "Keyestudio",
         title: "Collaboration de marque",
         logo: "/media/logos/keyestudio.webp",
+        photos: [
+          { src: "/media/experience/keyestudio-robot-kit.webp", caption: "Le kit robot Keyestudio" },
+        ],
         dateRange: "2024",
         bullets: [
           "Sélectionné par la marque pour présenter un de leurs kits robotiques sur TikTok en échange du produit",
@@ -885,7 +906,11 @@ export const content = {
       },
       {
         company: "Launaguet Sport Loisir Culture (LSLC)",
+        logo: "/media/logos/lslc.webp",
         title: "Bénévole support informatique",
+        photos: [
+          { src: "/media/experience/lslc-it-support.webp", caption: "Assistance informatique à LSLC" },
+        ],
         dateRange: "2022 - 2024",
         bullets: [
           "Résolution des problèmes informatiques de l'association",
@@ -897,6 +922,10 @@ export const content = {
           "LNCMI-CNRS — Laboratoire National des Champs Magnétiques Intenses",
         title: "Stage d'observation",
         logo: "/media/logos/lncmi-cnrs.webp",
+        photos: [
+          { src: "/media/experience/lncmi-cnrs-building.webp", caption: "Le bâtiment du LNCMI-CNRS" },
+          { src: "/media/experience/lncmi-cnrs-magnet.webp", caption: "Un aimant à champ intense au LNCMI" },
+        ],
         dateRange: "2019",
         bullets: [
           "Observation de la collaboration entre chercheurs et ingénieurs",
@@ -906,6 +935,9 @@ export const content = {
       {
         company: "FabLab",
         title: "Apprentissage de l'électronique programmable",
+        photos: [
+          { src: "/media/experience/fablab.webp", caption: "Au FabLab" },
+        ],
         dateRange: "2016 - 2018",
         bullets: [
           "Découverte de l'électronique programmable avec Arduino",
@@ -916,6 +948,10 @@ export const content = {
         company: "Trophée de Robotique — Cité de l'Espace",
         title: "Compétiteur",
         logo: "/media/logos/planete-sciences-occitanie.webp",
+        photos: [
+          { src: "/media/experience/robotics-trophy-1.webp", caption: "Le robot sur la table de compétition" },
+          { src: "/media/experience/robotics-trophy-2.webp", caption: "Avec le robot à la Cité de l'Espace" },
+        ],
         dateRange: "2014",
         bullets: [
           "Quatrième place sur douze clubs engagés",
