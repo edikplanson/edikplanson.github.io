@@ -366,12 +366,16 @@ export const content = {
       },
       {
         school: "Aeronautical Initiation Certificate (BIA), Toulouse",
+        logo: "/media/logos/bia-robin-dr400.webp",
+        logoCredit: "Photo: Kakoula10, CC BY-SA 4.0, Wikimedia Commons",
         degree: "Aeronautical Initiation Certificate",
         dateRange: "2022",
         achievements: ["Obtained the BIA with honours (Assez Bien)"],
       },
       {
         school: "Lycée Ozenne, Toulouse",
+        logo: "/media/logos/lycee-ozenne.webp",
+        logoCredit: "Photo: Bgrebille, CC BY-SA 3.0, Wikimedia Commons",
         degree:
           "French Baccalauréat, majors in Mathematics and Digital & Computer Science",
         dateRange: "2020 - 2023",
@@ -984,12 +988,16 @@ export const content = {
       },
       {
         school: "Brevet d'Initiation Aéronautique (BIA), Toulouse",
+        logo: "/media/logos/bia-robin-dr400.webp",
+        logoCredit: "Photo: Kakoula10, CC BY-SA 4.0, Wikimedia Commons",
         degree: "Brevet d'Initiation Aéronautique",
         dateRange: "2022",
         achievements: ["Obtention du BIA avec mention Assez Bien"],
       },
       {
         school: "Lycée Ozenne, Toulouse",
+        logo: "/media/logos/lycee-ozenne.webp",
+        logoCredit: "Photo: Bgrebille, CC BY-SA 3.0, Wikimedia Commons",
         degree:
           "Baccalauréat général, spécialités Mathématiques et Numérique et Sciences Informatiques",
         dateRange: "2020 - 2023",
