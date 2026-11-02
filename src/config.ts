@@ -54,6 +54,7 @@ export const content = {
         { name: "London", detail: "United Kingdom" },
         { name: "Japan", detail: "Tokyo and beyond" },
       ],
+      goal: "In the long run, I would like to found my own robotics startup.",
     },
     description:
       "Portfolio of Edik Planson — engineering student at INP-ENSEEIHT in Toulouse, passionate about robotics and animatronics.",
@@ -683,6 +684,7 @@ export const content = {
         { name: "Londres", detail: "Royaume-Uni" },
         { name: "Japon", detail: "Tokyo et au-delà" },
       ],
+      goal: "À terme, j'aimerais fonder ma propre startup en robotique.",
     },
     description:
       "Portfolio d'Edik Planson — étudiant ingénieur à l'INP-ENSEEIHT à Toulouse, passionné de robotique et d'animatronique.",

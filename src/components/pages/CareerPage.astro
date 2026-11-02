@@ -120,6 +120,14 @@ const links = [
               );
             })}
           </div>
+          {c.mobility.goal && (
+            <p
+              class="mt-6 text-base sm:text-lg font-medium"
+              style={`color: ${siteConfig.accentColor}`}
+            >
+              {c.mobility.goal}
+            </p>
+          )}
         </div>
       )
     }
