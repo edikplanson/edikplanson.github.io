@@ -8,7 +8,7 @@ export const siteConfig = {
   accentColor: "#4ec9b0",
   social: {
     email: "edikpcontact@gmail.com",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/edikplanson",
     twitter: "",
     github: "",
   },
