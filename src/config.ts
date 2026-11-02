@@ -198,6 +198,11 @@ export const content = {
         company: "Hackathon IA for Impact — La Mêlée",
         location: "At ENSEEIHT, Toulouse",
         title: "Grand Prix winner",
+        logo: "/media/logos/hackathon-ia-for-impact.webp",
+        photo: {
+          src: "/media/experience/hackathon-ia-for-impact-winners.webp",
+          caption: "The BâtIA team with the Grand Prix",
+        },
         dateRange: "October 2026",
         bullets: [
           "Won the Action Logement / In'li Sud Ouest challenge, then the Grand Prix of the final, among about 100 participants over 30 non-stop hours at ENSEEIHT",
@@ -792,6 +797,11 @@ export const content = {
         company: "Hackathon IA for Impact — La Mêlée",
         location: "À l'ENSEEIHT, Toulouse",
         title: "Lauréat du Grand Prix",
+        logo: "/media/logos/hackathon-ia-for-impact.webp",
+        photo: {
+          src: "/media/experience/hackathon-ia-for-impact-winners.webp",
+          caption: "L'équipe BâtIA avec le Grand Prix",
+        },
         dateRange: "Octobre 2026",
         bullets: [
           "Victoire sur le défi Action Logement / In'li Sud Ouest, puis Grand Prix de la finale, parmi une centaine de participants pendant 30 heures non-stop à l'ENSEEIHT",
