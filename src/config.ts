@@ -346,7 +346,7 @@ export const content = {
         school: "ENSEEIHT — Toulouse INP",
         degree:
           "Engineering degree (Diplôme d'ingénieur), Electronics, Electrical Energy and Automation (3EA)",
-        logo: "/media/logos/enseeiht.webp",
+        logo: "/media/logos/enseeiht-tile.webp",
         dateRange: "2026 - 2029",
         achievements: [
           "3EA track: electrical engineering, electronics, automation and embedded systems",
@@ -355,7 +355,7 @@ export const content = {
 
       {
         school: "IUT Paul Sabatier, Toulouse",
-        logo: "/media/logos/iut-toulouse.svg",
+        logo: "/media/logos/iut-toulouse-tile.webp",
         degree:
           "BUT GEII (Electrical Engineering and Industrial Computing), Industrial Automation and Computing (AII) track",
         dateRange: "2023 - 2026",
@@ -968,7 +968,7 @@ export const content = {
         school: "ENSEEIHT — Toulouse INP",
         degree:
           "Diplôme d'ingénieur, filière Électronique, Énergie électrique et Automatique (3EA)",
-        logo: "/media/logos/enseeiht.webp",
+        logo: "/media/logos/enseeiht-tile.webp",
         dateRange: "2026 - 2029",
         achievements: [
           "Filière 3EA : génie électrique, électronique, automatique et systèmes embarqués",
@@ -977,7 +977,7 @@ export const content = {
 
       {
         school: "IUT Paul Sabatier, Toulouse",
-        logo: "/media/logos/iut-toulouse.svg",
+        logo: "/media/logos/iut-toulouse-tile.webp",
         degree:
           "BUT GEII (Génie Électrique et Informatique Industrielle), parcours Automatisme et Informatique Industrielle (AII)",
         dateRange: "2023 - 2026",
