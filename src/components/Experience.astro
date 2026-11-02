@@ -89,16 +89,14 @@ const hasExperience = c.experience && c.experience.length > 0;
 
                     {photos.length > 0 && (
                       <div
-                        class:list={[
-                          "mt-5 grid gap-3",
-                          photos.length > 1 && "grid-cols-2",
-                        ]}
+                        class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
                         data-gallery
                       >
                         {photos.map((photo) => (
                           <button
                             type="button"
-                            class="group/photo block w-full overflow-hidden rounded-lg border border-[var(--vs-border)] bg-[var(--vs-bg-inset)] cursor-zoom-in"
+                            class="group/thumb relative block aspect-video overflow-hidden rounded-md border bg-[var(--vs-bg)] cursor-zoom-in transition-all duration-300 hover:border-[var(--thumb-accent)]"
+                            style={`border-color: var(--vs-border); --thumb-accent: ${color}`}
                             data-lightbox-item
                             data-src={photo.src}
                             data-kind="image"
@@ -110,7 +108,7 @@ const hasExperience = c.experience && c.experience.length > 0;
                               alt={photo.caption}
                               loading="lazy"
                               decoding="async"
-                              class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover/photo:scale-105"
+                              class="h-full w-full object-cover transition-transform duration-500 group-hover/thumb:scale-105"
                             />
                           </button>
                         ))}
