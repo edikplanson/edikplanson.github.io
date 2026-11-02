@@ -21,16 +21,6 @@ const cards = [
     label: t("nav.experience"),
     text: t("home.experience.text"),
   },
-  // Drops out of the grid when the achievements array is emptied.
-  ...(c.achievements?.length
-    ? [
-        {
-          route: "/achievements/",
-          label: t("nav.achievements"),
-          text: t("home.achievements.text"),
-        },
-      ]
-    : []),
   {
     route: "/education/",
     label: t("nav.education"),
@@ -46,6 +36,7 @@ const cards = [
         },
       ]
     : []),
+  { route: "/career/", label: t("nav.career"), text: t("home.career.text") },
 ];
 ---
 

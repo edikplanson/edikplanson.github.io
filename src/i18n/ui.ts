@@ -13,9 +13,9 @@ export const navItems = [
   { route: "/projects/", key: "nav.projects" },
   { route: "/skills/", key: "nav.skills" },
   { route: "/experience/", key: "nav.experience" },
-  { route: "/achievements/", key: "nav.achievements", requires: "achievements" },
   { route: "/education/", key: "nav.education" },
   { route: "/press/", key: "nav.press", requires: "press" },
+  { route: "/career/", key: "nav.career" },
   { route: "/contact/", key: "nav.contact" },
 ] as const;
 
@@ -25,9 +25,9 @@ export const ui = {
     "nav.projects": "Projects",
     "nav.skills": "Skills",
     "nav.experience": "Experience",
-    "nav.achievements": "Achievements",
     "nav.education": "Education",
     "nav.press": "Press",
+    "nav.career": "Career",
     "nav.contact": "Contact",
 
     "hero.greeting": "Hello! 👋",
@@ -38,9 +38,9 @@ export const ui = {
     "home.projects.text": "personal and university projects",
     "home.skills.text": "Technical, software and transferable",
     "home.experience.text": "Internships, collaborations and volunteering",
-    "home.achievements.text": "Awards and competitions",
     "home.education.text": "BUT GEII, BIA and Baccalauréat",
     "home.press.text": "Media coverage and interviews",
+    "home.career.text": "LinkedIn and CV",
 
     "projects.subtitle":
       "The personal and university projects that built my skills, from a robotic hand to a life-size Wall-E animatronic.",
@@ -48,13 +48,14 @@ export const ui = {
       "The technical, software and transferable skills developed through my projects and experiences.",
     "experience.subtitle":
       "The professional and volunteer experiences that consolidated and broadened my abilities.",
-    "achievements.subtitle":
-      "Awards, rankings and competitions I took part in.",
     "education.subtitle":
       "My academic path, from the Baccalauréat to the BUT GEII on the Industrial Automation and Computing track.",
     "press.subtitle":
       "Articles, interviews and media coverage about my projects.",
     "press.empty": "No coverage listed yet.",
+    "career.subtitle": "My LinkedIn profile and my CV, in French and English.",
+    "career.linkedin": "LinkedIn",
+    "career.linkedinView": "See my profile",
     "press.read": "See the article",
     "contact.subtitle":
       "A question, an internship opportunity, or simply the urge to talk robotics? Write to me.",
@@ -80,9 +81,9 @@ export const ui = {
     "nav.projects": "Projets",
     "nav.skills": "Compétences",
     "nav.experience": "Expérience",
-    "nav.achievements": "Réalisations",
     "nav.education": "Formation",
     "nav.press": "Presse",
+    "nav.career": "Carrière",
     "nav.contact": "Contact",
 
     "hero.greeting": "Bonjour ! 👋",
@@ -93,9 +94,9 @@ export const ui = {
     "home.projects.text": "projets personnels et universitaires",
     "home.skills.text": "Techniques, logicielles et transversales",
     "home.experience.text": "Stages, collaborations et bénévolat",
-    "home.achievements.text": "Prix et compétitions",
     "home.education.text": "BUT GEII, BIA et baccalauréat",
     "home.press.text": "Retombées presse et interviews",
+    "home.career.text": "LinkedIn et CV",
 
     "projects.subtitle":
       "Les projets personnels et universitaires qui ont construit mes compétences, de la main robotique au Wall-E animatronique à taille réelle.",
@@ -103,13 +104,14 @@ export const ui = {
       "Les compétences techniques, logicielles et transversales développées au fil de mes projets et de mes expériences.",
     "experience.subtitle":
       "Les expériences professionnelles et associatives qui ont consolidé et diversifié mes capacités.",
-    "achievements.subtitle":
-      "Les prix, classements et compétitions auxquels j'ai participé.",
     "education.subtitle":
       "Mon parcours scolaire, du baccalauréat au BUT GEII parcours Automatisme et Informatique Industrielle.",
     "press.subtitle":
       "Articles, interviews et retombées presse à propos de mes projets.",
     "press.empty": "Aucune retombée presse pour le moment.",
+    "career.subtitle": "Mon profil LinkedIn et mon CV, en français et en anglais.",
+    "career.linkedin": "LinkedIn",
+    "career.linkedinView": "Voir mon profil",
     "press.read": "Voir l'article",
     "contact.subtitle":
       "Une question, une opportunité de stage ou simplement l'envie d'échanger sur la robotique ? Écrivez-moi.",
