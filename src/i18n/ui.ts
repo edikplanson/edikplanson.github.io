@@ -71,7 +71,7 @@ export const ui = {
     "cv.french": "French version",
     "cv.english": "English version",
     "cv.view": "See PDF",
-    "cv.openCurrent": "Open my CV (PDF)",
+    "cv.openCurrent": "Open my CV, English and French (PDF)",
 
     "footer.rights": "All rights reserved.",
     "lang.switchLabel": "Language",
@@ -127,7 +127,7 @@ export const ui = {
     "cv.french": "Version française",
     "cv.english": "Version anglaise",
     "cv.view": "Voir le PDF",
-    "cv.openCurrent": "Ouvrir mon CV (PDF)",
+    "cv.openCurrent": "Ouvrir mon CV, anglais et français (PDF)",
 
     "footer.rights": "Tous droits réservés.",
     "lang.switchLabel": "Langue",

@@ -13,7 +13,7 @@ import {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const currentRoute = getRouteFromUrl(Astro.url);
-const cvHref = cvPath(lang);
+const cvHref = cvPath("both");
 
 /* Each tab carries its own syntax colour, like file-type icons in a sidebar. */
 const tabs = visibleNavItems(lang).map((item, i) => ({

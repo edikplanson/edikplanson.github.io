@@ -30,6 +30,8 @@ export const siteConfig = {
   cv: {
     en: "/cv/CV-Edik-Planson-EN.pdf",
     fr: "/cv/CV-Edik-Planson-FR.pdf",
+    /** Both CVs in one file, English first (pdfunite EN FR), for the header button. */
+    both: "/cv/CV-Edik-Planson-EN-FR.pdf",
   },
   contact: {
     emailPerso: "edikpcontact@gmail.com",

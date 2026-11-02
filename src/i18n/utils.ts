@@ -31,8 +31,8 @@ export function localizePath(route: string, lang: Lang): string {
   return `${base}${path}`;
 }
 
-/** The CV for `lang`, as a href with the deploy base prepended. */
-export function cvPath(lang: Lang): string {
+/** The CV for `lang` (or both, merged), as a href with the deploy base prepended. */
+export function cvPath(lang: Lang | "both"): string {
   return `${base}${siteConfig.cv[lang]}`;
 }
 
