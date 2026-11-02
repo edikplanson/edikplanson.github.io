@@ -93,5 +93,35 @@ const links = [
         ))
       }
     </div>
+
+    {
+      c.mobility && (
+        <div class="max-w-3xl mt-12">
+          <h2 class="text-xl font-bold text-[var(--vs-fg)] mb-2">
+            {t("career.mobility")}
+          </h2>
+          <p class="text-base sm:text-lg text-[var(--vs-fg-body)] mb-4">
+            {c.mobility.text}
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {c.mobility.places.map((place, i) => {
+              const color =
+                siteConfig.palette[(links.length + i) % siteConfig.palette.length];
+              return (
+                <div
+                  class="gutter bg-[var(--vs-bg-inset)] md:bg-[var(--vs-bg-inset)]/90 md:backdrop-blur-sm rounded-lg border border-[var(--vs-border)] p-4 pl-5"
+                  style={`--gutter-color: ${color}`}
+                >
+                  <p class="text-base sm:text-lg font-medium" style={`color: ${color}`}>
+                    {place.name}
+                  </p>
+                  <p class="text-sm text-[var(--vs-fg-muted)]">{place.detail}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )
+    }
   </section>
 </Layout>
