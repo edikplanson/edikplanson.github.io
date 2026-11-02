@@ -1,11 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PageHeading from "../PageHeading.astro";
-import { siteConfig } from "../../config";
+import { siteConfig, getContent } from "../../config";
 import { cvPath, getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const c = getContent(lang);
 
 /* The CV of the page's own language first: it is the one most visitors want. */
 const cvs = (lang === "fr" ? (["fr", "en"] as const) : (["en", "fr"] as const)).map(
@@ -42,6 +43,17 @@ const links = [
   <PageHeading title={t("nav.career")} subtitle={t("career.subtitle")} />
 
   <section class="p-8 sm:p-12 md:p-16 lg:px-24 lg:py-16">
+    <p
+      class="max-w-3xl mb-8 flex items-center gap-2 text-lg sm:text-xl font-bold"
+      style={`color: ${siteConfig.accentColor}`}
+    >
+      <span
+        aria-hidden="true"
+        class="w-2.5 h-2.5 rounded-full shrink-0"
+        style={`background-color: ${siteConfig.accentColor}`}
+      ></span>
+      {c.lookingFor}
+    </p>
     <div class="max-w-3xl grid grid-cols-1 sm:grid-cols-2 gap-6">
       {
         links.map((link) => (

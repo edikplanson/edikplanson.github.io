@@ -44,6 +44,8 @@ export const siteConfig = {
 export const content = {
   en: {
     title: "Maker & electrical engineering student",
+    /** What I'm looking for, shown on the home hero and the Career page. */
+    lookingFor: "Looking for an internship in hardware robotics",
     description:
       "Portfolio of Edik Planson — engineering student at INP-ENSEEIHT in Toulouse, passionate about robotics and animatronics.",
     address: "2 Rue Charles Camichel, 31000 Toulouse, France",
@@ -569,6 +571,7 @@ export const content = {
 
   fr: {
     title: "Maker & étudiant en génie électrique",
+    lookingFor: "À la recherche d'un stage en robotique hardware",
     description:
       "Portfolio d'Edik Planson — étudiant ingénieur à l'INP-ENSEEIHT à Toulouse, passionné de robotique et d'animatronique.",
     address: "2 Rue Charles Camichel, 31000 Toulouse",

@@ -1,6 +1,6 @@
 ---
 import { siteConfig, getContent } from "../config";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -104,6 +104,19 @@ const socials = [
     >
       {c.title}
     </p>
+
+    <a
+      href={localizePath("/career/", lang)}
+      class="mt-4 sm:mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded border bg-[var(--vs-bg-inset)] text-sm sm:text-base font-medium transition-opacity hover:opacity-70 animate-fade-in animation-delay-400"
+      style={`color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}`}
+    >
+      <span
+        aria-hidden="true"
+        class="w-2 h-2 rounded-full shrink-0"
+        style={`background-color: ${siteConfig.accentColor}`}
+      ></span>
+      {c.lookingFor}
+    </a>
 
     <!-- Skill tokens, each in its own syntax colour -->
     <ul
