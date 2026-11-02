@@ -195,6 +195,16 @@ export const content = {
     ],
     experience: [
       {
+        company: "Hackathon IA for Impact — La Mêlée, Toulouse",
+        title: "Grand Prix winner",
+        dateRange: "October 2026",
+        bullets: [
+          "Won the Action Logement / In'li Sud Ouest challenge, then the Grand Prix of the final, among about 100 participants over 30 non-stop hours at ENSEEIHT",
+          "Built BâtIA with a team of six, a platform that gives each appliance across thousands of social housing units a breakdown risk score",
+          "Moved maintenance from reactive to predictive, to cut costs, prioritise renovations and serve tenants faster",
+        ],
+      },
+      {
         company: "NUS — National University of Singapore",
         title: "Research engineering internship",
         logo: "/media/logos/nus.webp",
@@ -777,6 +787,16 @@ export const content = {
       },
     ],
     experience: [
+      {
+        company: "Hackathon IA for Impact — La Mêlée, Toulouse",
+        title: "Lauréat du Grand Prix",
+        dateRange: "Octobre 2026",
+        bullets: [
+          "Victoire sur le défi Action Logement / In'li Sud Ouest, puis Grand Prix de la finale, parmi une centaine de participants pendant 30 heures non-stop à l'ENSEEIHT",
+          "Conception de BâtIA en équipe de six : une plateforme qui attribue un score de risque de panne à chaque équipement de milliers de logements sociaux",
+          "Passage d'une maintenance réactive à une maintenance prédictive, pour réduire les coûts, prioriser les rénovations et répondre plus vite aux locataires",
+        ],
+      },
       {
         company: "NUS — National University of Singapore",
         title: "Stage ingénieur de recherche",
