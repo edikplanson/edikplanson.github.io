@@ -208,7 +208,7 @@ export const content = {
         company: "Hackathon IA for Impact — La Mêlée",
         location: "At ENSEEIHT, Toulouse",
         title: "Grand Prix winner",
-        logo: "/media/logos/hackathon-ia-for-impact.webp",
+        logo: "/media/logos/hackathon-ia-for-impact-tile.webp",
         photos: [{ src: "/media/experience/hackathon-ia-for-impact-winners.webp", caption: "The BâtIA team with the Grand Prix" }],
         dateRange: "October 2026",
         bullets: [
@@ -220,7 +220,7 @@ export const content = {
       {
         company: "NUS — National University of Singapore",
         title: "Research engineering internship",
-        logo: "/media/logos/nus.webp",
+        logo: "/media/logos/nus-tile.webp",
         dateRange: "May 2026 - July 2026",
         bullets: [
           "Project: design and integration of tactile sensors, and development of a teleoperation system to train Visual-Tactile-Language-Action (VTLA) models",
@@ -230,7 +230,7 @@ export const content = {
       {
         company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
         title: "Physical AI Hackathon prize winner",
-        logo: "/media/logos/epfl.webp",
+        logo: "/media/logos/epfl-tile.webp",
         dateRange: "May 2026",
         bullets: [
           "Won 2nd place in the Hardware Track of the EPFL AI Team Hackathon (Physical AI)",
@@ -242,7 +242,7 @@ export const content = {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
         title: "Research engineering internship",
-        logo: "/media/logos/laas-cnrs.webp",
+        logo: "/media/logos/laas-cnrs-tile.webp",
         dateRange: "March 2026 - May 2026",
         bullets: [
           "Project: design and implementation of tactile sensors on a robot for the deployment of a VTLA model",
@@ -253,7 +253,7 @@ export const content = {
       {
         company: "Y Combinator — RoboHacks by Innate, San Francisco",
         title: "Hackathon entertainer",
-        logo: "/media/logos/y-combinator.svg",
+        logo: "/media/logos/y-combinator-tile.webp",
         dateRange: "April 2026",
         bullets: [
           "Brought my fully custom-built WALL-E animatronic robot to Innate's 2026 Physical AI Hackathon, hosted at the Y Combinator office in San Francisco",
@@ -263,7 +263,7 @@ export const content = {
       {
         company: "IUT GEII, Toulouse",
         title: "Tutor",
-        logo: "/media/logos/iut-toulouse.svg",
+        logo: "/media/logos/iut-toulouse-tile.webp",
         dateRange: "October 2024 - January 2026",
         bullets: [
           "Tutoring first-year and second-year students",
@@ -274,7 +274,7 @@ export const content = {
         company:
           "LAAS-CNRS — Laboratory for Analysis and Architecture of Systems",
         title: "Research engineering internship",
-        logo: "/media/logos/laas-cnrs.webp",
+        logo: "/media/logos/laas-cnrs-tile.webp",
         photos: [
           { src: "/media/experience/laas-cnrs-instrumented-insole.webp", caption: "The instrumented insole" },
         ],
@@ -287,7 +287,7 @@ export const content = {
       {
         company: "Keyestudio",
         title: "Brand collaboration",
-        logo: "/media/logos/keyestudio.webp",
+        logo: "/media/logos/keyestudio-tile.webp",
         photos: [
           { src: "/media/experience/keyestudio-robot-kit.webp", caption: "The Keyestudio robot kit" },
         ],
@@ -299,7 +299,7 @@ export const content = {
       },
       {
         company: "Launaguet Sport Loisir Culture (LSLC)",
-        logo: "/media/logos/lslc.webp",
+        logo: "/media/logos/lslc-tile.webp",
         title: "Volunteer IT support",
         photos: [
           { src: "/media/experience/lslc-it-support.webp", caption: "IT support at LSLC" },
@@ -313,7 +313,7 @@ export const content = {
       {
         company: "LNCMI-CNRS — National Laboratory for Intense Magnetic Fields",
         title: "Observation internship",
-        logo: "/media/logos/lncmi-cnrs.webp",
+        logo: "/media/logos/lncmi-cnrs-tile.webp",
         photos: [
           { src: "/media/experience/lncmi-cnrs-building.webp", caption: "The LNCMI-CNRS building" },
           { src: "/media/experience/lncmi-cnrs-magnet.webp", caption: "An intense-field magnet at the LNCMI" },
@@ -339,7 +339,7 @@ export const content = {
       {
         company: "Robotics Trophy — Cité de l'Espace",
         title: "Competitor",
-        logo: "/media/logos/planete-sciences-occitanie.webp",
+        logo: "/media/logos/planete-sciences-occitanie-tile.webp",
         photos: [
           { src: "/media/experience/robotics-trophy-1.webp", caption: "The robot on the competition table" },
           { src: "/media/experience/robotics-trophy-2.webp", caption: "With the robot at the Cité de l'Espace" },
@@ -838,7 +838,7 @@ export const content = {
         company: "Hackathon IA for Impact — La Mêlée",
         location: "À l'ENSEEIHT, Toulouse",
         title: "Lauréat du Grand Prix",
-        logo: "/media/logos/hackathon-ia-for-impact.webp",
+        logo: "/media/logos/hackathon-ia-for-impact-tile.webp",
         photos: [{ src: "/media/experience/hackathon-ia-for-impact-winners.webp", caption: "L'équipe BâtIA avec le Grand Prix" }],
         dateRange: "Octobre 2026",
         bullets: [
@@ -850,7 +850,7 @@ export const content = {
       {
         company: "NUS — National University of Singapore",
         title: "Stage ingénieur de recherche",
-        logo: "/media/logos/nus.webp",
+        logo: "/media/logos/nus-tile.webp",
         dateRange: "Mai 2026 - Juillet 2026",
         bullets: [
           "Projet : conception et intégration de capteurs tactiles, et développement d'un système de téléopération pour l'entraînement de modèles Visual-Tactile-Language-Action (VTLA)",
@@ -860,7 +860,7 @@ export const content = {
       {
         company: "EPFL AI Team Hackathon (Physical AI) — Lausanne",
         title: "Lauréat du Physical AI Hackathon",
-        logo: "/media/logos/epfl.webp",
+        logo: "/media/logos/epfl-tile.webp",
         dateRange: "Mai 2026",
         bullets: [
           "2e place du Hardware Track de l'EPFL AI Team Hackathon (Physical AI)",
@@ -872,7 +872,7 @@ export const content = {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
         title: "Stage ingénieur de recherche",
-        logo: "/media/logos/laas-cnrs.webp",
+        logo: "/media/logos/laas-cnrs-tile.webp",
         dateRange: "Mars 2026 - Mai 2026",
         bullets: [
           "Projet : conception et implémentation de capteurs tactiles sur un robot pour le déploiement d'un modèle VTLA",
@@ -883,7 +883,7 @@ export const content = {
       {
         company: "Y Combinator — RoboHacks par Innate, San Francisco",
         title: "Animateur de hackathon",
-        logo: "/media/logos/y-combinator.svg",
+        logo: "/media/logos/y-combinator-tile.webp",
         dateRange: "Avril 2026",
         bullets: [
           "Présentation de mon robot animatronique WALL-E entièrement fait maison au Physical AI Hackathon 2026 d'Innate, organisé dans les locaux de Y Combinator à San Francisco",
@@ -893,7 +893,7 @@ export const content = {
       {
         company: "IUT GEII, Toulouse",
         title: "Tuteur",
-        logo: "/media/logos/iut-toulouse.svg",
+        logo: "/media/logos/iut-toulouse-tile.webp",
         dateRange: "Octobre 2024 - Janvier 2026",
         bullets: [
           "Tutorat d'étudiants de première et de deuxième année",
@@ -904,7 +904,7 @@ export const content = {
         company:
           "LAAS-CNRS — Laboratoire d'Analyse et d'Architecture des Systèmes",
         title: "Stage ingénieur de recherche",
-        logo: "/media/logos/laas-cnrs.webp",
+        logo: "/media/logos/laas-cnrs-tile.webp",
         photos: [
           { src: "/media/experience/laas-cnrs-instrumented-insole.webp", caption: "La semelle instrumentée" },
         ],
@@ -917,7 +917,7 @@ export const content = {
       {
         company: "Keyestudio",
         title: "Collaboration de marque",
-        logo: "/media/logos/keyestudio.webp",
+        logo: "/media/logos/keyestudio-tile.webp",
         photos: [
           { src: "/media/experience/keyestudio-robot-kit.webp", caption: "Le kit robot Keyestudio" },
         ],
@@ -929,7 +929,7 @@ export const content = {
       },
       {
         company: "Launaguet Sport Loisir Culture (LSLC)",
-        logo: "/media/logos/lslc.webp",
+        logo: "/media/logos/lslc-tile.webp",
         title: "Bénévole support informatique",
         photos: [
           { src: "/media/experience/lslc-it-support.webp", caption: "Assistance informatique à LSLC" },
@@ -944,7 +944,7 @@ export const content = {
         company:
           "LNCMI-CNRS — Laboratoire National des Champs Magnétiques Intenses",
         title: "Stage d'observation",
-        logo: "/media/logos/lncmi-cnrs.webp",
+        logo: "/media/logos/lncmi-cnrs-tile.webp",
         photos: [
           { src: "/media/experience/lncmi-cnrs-building.webp", caption: "Le bâtiment du LNCMI-CNRS" },
           { src: "/media/experience/lncmi-cnrs-magnet.webp", caption: "Un aimant à champ intense au LNCMI" },
@@ -970,7 +970,7 @@ export const content = {
       {
         company: "Trophée de Robotique — Cité de l'Espace",
         title: "Compétiteur",
-        logo: "/media/logos/planete-sciences-occitanie.webp",
+        logo: "/media/logos/planete-sciences-occitanie-tile.webp",
         photos: [
           { src: "/media/experience/robotics-trophy-1.webp", caption: "Le robot sur la table de compétition" },
           { src: "/media/experience/robotics-trophy-2.webp", caption: "Avec le robot à la Cité de l'Espace" },
