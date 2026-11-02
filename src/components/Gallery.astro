@@ -5,27 +5,34 @@
  * without pictures looks exactly like before.
  *
  *   <Gallery folder="projects/smart-car" label={project.name} />
+ *   <Gallery items={[{ src, caption, kind: "image" }]} />
  *
  * Clicking a thumbnail opens the single <Lightbox /> living in the layout.
  */
-import { getMedia } from "../lib/media";
+import { getMedia, type MediaItem } from "../lib/media";
 
 interface Props {
-  folder: string;
+  folder?: string;
+  /** Explicit items, used instead of reading `folder`. */
+  items?: MediaItem[];
   /** Used for alt text when a file has no caption. */
   label?: string;
   accent?: string;
 }
 
-const { folder, label = "", accent = "var(--vs-border-strong)" } = Astro.props;
-const items = getMedia(folder);
+const {
+  folder = "",
+  label = "",
+  accent = "var(--vs-border-strong)",
+} = Astro.props;
+const items = Astro.props.items ?? getMedia(folder);
 ---
 
 {
   items.length > 0 && (
     <div
       class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
-      data-gallery={folder}
+      data-gallery={folder || true}
     >
       {items.map((item, i) => (
         <button
