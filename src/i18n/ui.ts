@@ -57,8 +57,8 @@ export const ui = {
     "career.linkedin": "LinkedIn",
     "career.linkedinView": "See my profile",
     "career.mobility": "Mobility",
-    "career.pitch": "My pitch",
-    "career.pitch": "My pitch",
+    "career.pitch": "My elevator pitch",
+    "career.pitch": "My elevator pitch",
     "press.read": "See the article",
     "contact.subtitle":
       "A question, an internship opportunity, or simply the urge to talk robotics? Write to me.",
@@ -116,8 +116,8 @@ export const ui = {
     "career.linkedin": "LinkedIn",
     "career.linkedinView": "Voir mon profil",
     "career.mobility": "Mobilité",
-    "career.pitch": "Mon pitch",
-    "career.pitch": "Mon pitch",
+    "career.pitch": "Mon elevator pitch",
+    "career.pitch": "Mon elevator pitch",
     "press.read": "Voir l'article",
     "contact.subtitle":
       "Une question, une opportunité de stage ou simplement l'envie d'échanger sur la robotique ? Écrivez-moi.",
